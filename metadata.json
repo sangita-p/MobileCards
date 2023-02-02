@@ -1,0 +1,100 @@
+{
+	"Name": "mOrderRelease",
+	"Version": "1.2",
+	"Connection": "n1dmob",
+	"Descriptions": [
+		{
+			"language": "EN",
+			"text": ""
+		}
+	],
+	"GatekeeperConfiguration": null,
+	"SortCardsWith": null,
+	"RefreshInterval": null,
+	"CustomType": "Query",
+	"QueryInterval": null,
+	"AppLaunchUrl": null,
+	"UrlMatch": null,
+	"QueryURL": "/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder?$filter=MaintenanceProcessingPhase%20eq%20%270%27",
+	"QueryConfiguration": {
+		"QueryURLCollectionRoot": "$.d.results",
+		"QueryEntityKeyPaths": [
+			"$.d.__metadata.uri"
+		],
+		"EntityRootElement": "d",
+		"CacheQueryResult": false,
+		"RequestHttpMethod": "GET"
+	},
+	"QueryReturnsEntityCollection": true,
+	"NewsEnabled": false,
+	"AutoSubscribe": true,
+	"HiddenSubscription": false,
+	"SubscriptionParameters": [],
+	"ResourceIdentifiers": [
+		{
+			"Order": 0,
+			"Uri": "",
+			"ImagePaths": "",
+			"Shared": true,
+			"RequestHttpMethod": "GET"
+		}
+	],
+	"Parameters": {
+		"Parameters": [
+			{
+				"Name": "MaintenanceOrder",
+				"Propagate": false,
+				"ResourceOrderNumber": 0,
+				"Value": "$.d.MaintenanceOrder",
+				"displayName": "MaintenanceOrder"
+			}
+		]
+	},
+	"APNSEnabled": false,
+	"NotificationMessages": {
+		"Messages": []
+	},
+	"NotificationRules": [],
+	"ActionConfiguration": {
+		"Category": "0978089F-655F-42BF-AA23-956B4AC99D18",
+		"Actions": [
+			{
+				"ActionName": "release",
+				"ActionUrl": "/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrderRelease?MaintenanceOrder='${MaintenanceOrder}'",
+				"XCSRFTokenUrl": "/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder(MaintenanceOrder='${MaintenanceOrder}')",
+				"BehaviorAfterAction": "ACTIVE",
+				"HttpMethod": "POST",
+				"Nature": "Positive",
+				"EnabledForDeviceNotification": false,
+				"ActionBody": "",
+				"ActionBody@com.sap.mck.display.useCRLF": false,
+				"ActionHeaders": [
+					{
+						"HeaderName": "X-Requested-With",
+						"HeaderValue": "XMLHttpRequestAction"
+					}
+				],
+				"ActionParameters": [],
+				"Labels": [
+					{
+						"language": "EN",
+						"text": "Release"
+					}
+				]
+			}
+		],
+		"XCSRFTokenUrl": ""
+	},
+	"CustomRequestProperties": {
+		"RequestHttpMethod": "GET",
+		"RequestBody": "",
+		"RequestHeaders": []
+	},
+	"TemplateName": "User defined template",
+	"CardClass": "HtmlTemplate",
+	"useHtmlAsMapping": true,
+	"SubscribableTo": {
+		"Users": []
+	},
+	"Shared": false
+}
