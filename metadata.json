@@ -1,0 +1,141 @@
+{
+	"Name": "mTeco",
+	"Version": "1.5",
+	"Connection": "n1dmob",
+	"Descriptions": [
+		{
+			"language": "EN",
+			"text": ""
+		}
+	],
+	"GatekeeperConfiguration": null,
+	"GroupName": "",
+	"SortCardsWith": null,
+	"RefreshInterval": null,
+	"CustomType": "Query",
+	"QueryInterval": null,
+	"AppLaunchUrl": "",
+	"UrlMatch": null,
+	"QueryURL": "/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder?$filter=MaintenanceProcessingPhase%20eq%20%272%27",
+	"QueryConfiguration": {
+		"QueryURLCollectionRoot": "$.d.results",
+		"QueryEntityKeyPaths": [
+			"$.d.__metadata.uri"
+		],
+		"EntityRootElement": "d",
+		"CacheQueryResult": false,
+		"RequestHttpMethod": "GET"
+	},
+	"QueryReturnsEntityCollection": true,
+	"NewsEnabled": false,
+	"AutoSubscribe": true,
+	"HiddenSubscription": false,
+	"SubscriptionParameters": [],
+	"ResourceIdentifiers": [
+		{
+			"Order": 0,
+			"Uri": "",
+			"ImagePaths": "",
+			"Shared": false,
+			"RequestHttpMethod": "GET"
+		},
+		{
+			"Order": 1
+		}
+	],
+	"Parameters": {
+		"Parameters": [
+			{
+				"Name": "MaintenanceOrder",
+				"Propagate": false,
+				"ResourceOrderNumber": 0,
+				"Value": "$.d.MaintenanceOrder",
+				"displayName": "SalesOrderId"
+			}
+		]
+	},
+	"APNSEnabled": true,
+	"NotificationMessages": {
+		"Messages": [
+			{
+				"language": "EN",
+				"notificationType": "NEW",
+				"text": ""
+			}
+		]
+	},
+	"NotificationRules": [],
+	"ActionConfiguration": {
+		"Category": "0978089F-655F-42BF-AA23-956B4AC99D18",
+		"Actions": [
+			{
+				"ActionName": "technicallycomplete",
+				"ActionUrl": "/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrderCompletetechnical?MaintenanceOrder='${MaintenanceOrder}'&ActionName='SET_STATUS_ORD_COMPLETE_TEC'&RefDatetime=datetimeoffset'${completionDateTime}'",
+				"XCSRFTokenUrl": "/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder(MaintenanceOrder='${MaintenanceOrder}')",
+				"BehaviorAfterAction": "ACTIVE",
+				"HttpMethod": "POST",
+				"Nature": "Positive",
+				"EnabledForDeviceNotification": true,
+				"ActionBody": "",
+				"ActionBody@com.sap.mck.display.useCRLF": false,
+				"ActionHeaders": [
+					{
+						"HeaderName": "X-Requested-With",
+						"HeaderValue": "XMLHttpRequestAction"
+					}
+				],
+				"ActionParameters": [
+					{
+						"name": "completionDateTime",
+						"type": "Edm.DateTime",
+						"maxLength": 255,
+						"defaultValue": "2022-03-11T06:48:59.000Z",
+						"enabledForDeviceNotification": false,
+						"isKey": false,
+						"nullable": true,
+						"label": [
+							{
+								"language": "EN",
+								"text": "Completion Date/Time"
+							}
+						]
+					},
+					{
+						"name": "complete",
+						"type": "Edm.Boolean",
+						"maxLength": 255,
+						"defaultValue": "false",
+						"enabledForDeviceNotification": false,
+						"isKey": false,
+						"nullable": true,
+						"label": [
+							{
+								"language": "EN",
+								"text": "Complete Assigned Notifications"
+							}
+						]
+					}
+				],
+				"Labels": [
+					{
+						"language": "EN",
+						"text": "Technically Complete"
+					}
+				]
+			}
+		],
+		"XCSRFTokenUrl": ""
+	},
+	"CustomRequestProperties": {
+		"RequestHttpMethod": "GET",
+		"RequestBody": "",
+		"RequestHeaders": []
+	},
+	"TemplateName": "User defined template",
+	"CardClass": "HtmlTemplate",
+	"useHtmlAsMapping": true,
+	"SubscribableTo": {
+		"Users": []
+	},
+	"Shared": false
+}

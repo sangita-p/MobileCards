@@ -1,0 +1,94 @@
+<div id="mySimpleTemplate" class="myTemplate" data-type="text/x-handlebars-template">
+    <div class="header">
+        <h4>
+            Order
+        </h4>
+        &nbsp;
+        <span class="name">
+            {{d.MaintenanceOrderDesc}} ({{d.MaintenanceOrder}})
+        </span>
+    </div>
+    <div class="card-content">
+        <div class="all">
+            <div class="title-content">
+                <span class="title">
+                    Order Type
+                </span>
+                <br>
+                <span class="content">
+                    {{d.MaintenanceOrderTypeName}} ({{d.MaintenanceOrderType}})
+                </span>
+            </div>
+            <div class="title-content">
+                <span class="title">
+                    Notification
+                </span>
+                <br>
+                <span class="content">
+                    {{d.MaintenanceNotificationText}} ({{d.MaintenanceNotification}})
+                </span>
+            </div>
+            <div class="title-content">
+                <span class="title">
+                    Priority
+                </span>
+                <br>
+                <span class="content">
+                    {{d.MaintPriorityDesc}} ({{d.MaintPriority}})
+                </span>
+            </div>
+
+            <div class="title-content">
+                <span class="title">
+                    Final Due Date
+                </span>
+                <br>
+                <span class="content">
+                    {{d.EventStatus}}
+                </span>
+            </div>
+
+
+            <div class="title-content">
+                <span class="title">
+                    Technical Object
+                </span>
+                <br>
+                <span class="content">
+                    {{d.TechnicalObjectDescription}}{{d.TechnicalObjectLabel}}
+                </span>
+            </div>
+
+            <div class="title-content">
+                <span class="title">
+                    Start Date
+                </span>
+                <br>
+                <span class="content">
+                    {{c2gEdmDateTime "M/d/yyyy" d.MaintOrdBasicStartDate}}
+                </span>
+            </div>
+            <div class="title-content">
+                <span class="title">
+                    End Date
+                </span>
+                <br>
+                <span class="content">
+                    {{c2gEdmDateTime "M/d/yyyy" d.MaintOrdBasicEndDate}}
+                </span>
+            </div>
+
+
+            <div class="title-content">
+                <span class="title">
+                    Main Work Center
+                </span>
+                <br>
+                <span class="content">
+                    {{d.MainWorkCenterPlantName}} ({{d.MainWorkCenterPlant}})
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>

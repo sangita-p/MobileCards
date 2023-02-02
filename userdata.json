@@ -1,0 +1,298 @@
+{
+    "d": {
+        "__metadata": {
+            "id": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')",
+            "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')",
+            "type": "EAM_OBJPG_MAINTENANCEORDER_SRV.C_ObjPgMaintOrderType"
+        },
+        "Cancelbusinesscomplete_ac": false,
+        "Canceltechnicalcomplete_ac": false,
+        "Changeassgmt_ac": true,
+        "Changescheduling_ac": true,
+        "Completebusiness_ac": true,
+        "Completetechnical_ac": true,
+        "Donotexecute_ac": false,
+        "Release_ac": false,
+        "OrderHasLongText_fc": 3,
+        "MaintenanceOrder": "4002984",
+        "MaintOrderWithLeadingZeros": "000004002984",
+        "MaintenanceOrderDesc": "GTL16",
+        "MaintenanceOrderInternalID": "OR000004002984",
+        "MaintenanceOrderType": "A001",
+        "MaintenanceOrderTypeName": "Aircraft order",
+        "MaintenanceProcessingPhase": "2",
+        "MaintenanceProcessingPhaseDesc": "Released",
+        "MaintPriority": "",
+        "MaintPriorityColorCode": 0,
+        "MaintPriorityDesc": "",
+        "MaintenanceNotification": "",
+        "MaintenanceNotificationText": "",
+        "TaskListGroup": "135",
+        "TaskListType": "A",
+        "TaskListGroupCounter": "1",
+        "TaskListKeyDate": "/Date(1641168000000)/",
+        "TaskList": "A/135/1",
+        "TaskListDesc": "GTL16",
+        "MaintenancePlan": "",
+        "MaintenancePlanDesc": "",
+        "MaintenanceItem": "",
+        "MaintenanceItemDescription": "",
+        "TechnicalObjectLabel": "XABC",
+        "TechnicalObjectDescription": "B787 Dreamliner",
+        "TechObjIsEquipOrFuncnlLoc": "EAMS_FL",
+        "TechObjIsEquipOrFuncnlLocDesc": "Functional Location",
+        "OrderHasLongText": false,
+        "MainWorkCenter": "AF",
+        "MainWorkCenterText": "Airframe - Airframe",
+        "MaintOrdBasicStartDate": "/Date(1604620800000)/",
+        "MaintOrdBasicEndDate": "/Date(1604620800000)/",
+        "MaintOrdSchedBasicStartDate": "/Date(1604620800000)/",
+        "MaintOrdSchedBasicStartTime": "PT06H30M47S",
+        "ConcatenatedActiveSystStsName": "REL  CNF  JBFI MEBS NMAT PRC  SETC",
+        "ConcatenatedActiveUserStsName": "WIP",
+        "OrderNmbrOfAttachedDocuments": 0,
+        "MaintOrderNumberOfOperations": 1,
+        "MainWorkCenterPlant": "X003",
+        "MainWorkCenterPlantName": "Aircraft",
+        "MaintenancePlannerGroup": "A1",
+        "MaintenancePlannerGroupName": "A/C Maintenance",
+        "MaintenancePlanningPlant": "X003",
+        "MaintenancePlanningPlantName": "Aircraft",
+        "MaintOrdPersonResponsible": "",
+        "PersonResponsibleName": "",
+        "CreationDate": "/Date(1604620800000)/",
+        "CreatedByUser": "MANORANJAN",
+        "CreatedByUserDescription": "Manoranjan Puglengthy",
+        "Material": "",
+        "MaterialName": "",
+        "SerialNumber": "",
+        "Assembly": "",
+        "AssemblyName": "",
+        "OperationSystemCondition": "",
+        "OperationSystemConditionText": "",
+        "MaintenanceOrderPlanningCode": "",
+        "MaintOrderPlanningCodeName": "Unplanned order",
+        "MaintenanceRevision": "00000114",
+        "MaintenanceActivityType": "",
+        "MaintenanceActivityTypeName": "",
+        "MaintenancePlant": "X003",
+        "PlantName": "Aircraft",
+        "AssetLocation": "",
+        "AssetLocationName": "",
+        "AssetRoom": "",
+        "PlantSection": "",
+        "PlantSectionPersonRespName": "",
+        "PlantSectionPersonRespPhone": "",
+        "WorkCenter": "",
+        "WorkCenterText": "",
+        "ABCIndicator": "",
+        "ABCIndicatorDesc": "",
+        "SortField": "",
+        "CompanyCode": "X100",
+        "CompanyCodeName": "Axon Aircraft Inc",
+        "BusinessArea": "",
+        "BusinessAreaName": "",
+        "ControllingArea": "X100",
+        "ControllingAreaName": "MRO Controlling Area",
+        "ResponsibleCostCenter": "I1001",
+        "CostCenterName": "Component Production",
+        "ProfitCenter": "I001",
+        "ProfitCenterName": "Components",
+        "ControllingObjectClass": "OC",
+        "ControllingObjectClassName": "Overhead costs",
+        "OrderProcessingGroup": "00",
+        "OrderProcessingGroupName": "",
+        "Project": "0000000500",
+        "ProjectDescription": "Aircraft Maintenance",
+        "WBSElement": "0000000500_ALL",
+        "WBSDescription": "All work",
+        "LocAcctAssgmtCompanyCode": "X100",
+        "LocAcctAssgmtCompanyCodeName": "Axon Aircraft Inc",
+        "LocAcctAssgmtBusinessArea": "",
+        "LocAcctAssgmtBusinessAreaDesc": "",
+        "LocAcctAssgmtControllingArea": "X100",
+        "LocAcctAssgmtCtrlgAreaDesc": "MRO Controlling Area",
+        "LocAcctAssgmtCostCenter": "A1001",
+        "LocAcctAssgmtCostCenterDesc": "Spares",
+        "CityName": "U.S.A.",
+        "SettlementOrder": "",
+        "MasterFixedAsset": "",
+        "MasterFixedAssetDescription": "",
+        "FixedAsset": "",
+        "LocAcctAssgmtWBSElement": "0000000500_ALL",
+        "LocAcctAssgmtWBSElementDesc": "All work",
+        "TechnicalObject": "XABC",
+        "FunctionalLocationLabelName": "XABC",
+        "AuthorizationGroup": "",
+        "MaintPriorityType": "DF",
+        "WBSElementInternalID": "000000000000000000000500",
+        "Plant": "",
+        "MaintOrderRespPartnerFunction": "VW",
+        "RefTimeForOrderCompletion": "",
+        "IsOverdue": false,
+        "MaintenanceOrderThumbnailURL": "/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/OrderTypeImageSet(MaintenanceOrder='000004002984')/$value",
+        "MaintOrderIsFinallyConfirmed": true,
+        "UserStatus": "WIP",
+        "StatusName": "WIP",
+        "StatusProfile": "ZMRO0001",
+        "MaintOrderHasOpenReservations": false,
+        "MaintOrdHasOpenPurchaseOrders": false,
+        "MaintOrdHasOpenServices": false,
+        "MaintOrdCostCriticality": 1,
+        "MaintOrdTotalCost": "0.00 / 30.00 / 6060.00  USD",
+        "Currency": "USD",
+        "CompleteBusinessAndSetNotifSts": "",
+        "CompleteTechlyAndSetNotifSts": "",
+        "DoNotExectOrderAndSetNotifSts": "",
+        "ResetTechCompltnAndSetNotifSts": "",
+        "MaintObjectLocAcctAssgmtNmbr": "000000008439",
+        "Equipment": "",
+        "BasicSchedulingType": "1",
+        "OrdIsNotSchedldAutomatically": false,
+        "to_ABCIndicator": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_ABCIndicator"
+            }
+        },
+        "to_ActiveSystemStatus": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_ActiveSystemStatus"
+            }
+        },
+        "to_ActiveUserStatus": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_ActiveUserStatus"
+            }
+        },
+        "to_AssetLocationVH": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_AssetLocationVH"
+            }
+        },
+        "to_CreatedByUser": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_CreatedByUser"
+            }
+        },
+        "to_EAMProductQuickVw": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_EAMProductQuickVw"
+            }
+        },
+        "to_MaintenancePlanQuickVw": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_MaintenancePlanQuickVw"
+            }
+        },
+        "to_MaintenancePriority": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_MaintenancePriority"
+            }
+        },
+        "to_MaintenanceRevision": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_MaintenanceRevision"
+            }
+        },
+        "to_MaintNotificationQuickView": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_MaintNotificationQuickView"
+            }
+        },
+        "to_MaintOrderCost": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_MaintOrderCost"
+            }
+        },
+        "to_MaintOrderCostAggrg": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_MaintOrderCostAggrg"
+            }
+        },
+        "to_MaintOrderOperation": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_MaintOrderOperation"
+            }
+        },
+        "to_MaintOrderOperationAggrg": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_MaintOrderOperationAggrg"
+            }
+        },
+        "to_MaintOrderPhaseVH": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_MaintOrderPhaseVH"
+            }
+        },
+        "to_MaintOrderTypeVH": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_MaintOrderTypeVH"
+            }
+        },
+        "to_MaintOrderWthDesc": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_MaintOrderWthDesc"
+            }
+        },
+        "to_MaintOrdPlngDegreeCode": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_MaintOrdPlngDegreeCode"
+            }
+        },
+        "to_MaintPrioSmltdDates": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_MaintPrioSmltdDates"
+            }
+        },
+        "to_MaintTaskListQuickVw": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_MaintTaskListQuickVw"
+            }
+        },
+        "to_OperationSystemCondition": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_OperationSystemCondition"
+            }
+        },
+        "to_PersonResponsible": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_PersonResponsible"
+            }
+        },
+        "to_SchedulingParameters": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_SchedulingParameters"
+            }
+        },
+        "to_SystemStatus": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_SystemStatus"
+            }
+        },
+        "to_TechnicalObjectLabelVH": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_TechnicalObjectLabelVH"
+            }
+        },
+        "to_TechnicalObjQuickVw": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_TechnicalObjQuickVw"
+            }
+        },
+        "to_TechObjIsEquipOrFuncnlLoc": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_TechObjIsEquipOrFuncnlLoc"
+            }
+        },
+        "to_UserStatusWithStatusNumber": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_UserStatusWithStatusNumber"
+            }
+        },
+        "to_UserStatusWthoutStsNmbr": {
+            "__deferred": {
+                "uri": "http://40.70.43.60:8000/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder('4002984')/to_UserStatusWthoutStsNmbr"
+            }
+        }
+    }
+}
