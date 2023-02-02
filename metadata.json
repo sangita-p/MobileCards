@@ -1,0 +1,137 @@
+{
+	"Name": "Cancel Technical Completion",
+	"Version": "1.4",
+	"Connection": "n1dmob",
+	"Descriptions": [
+		{
+			"language": "EN",
+			"text": ""
+		}
+	],
+	"GatekeeperConfiguration": null,
+	"SortCardsWith": null,
+	"RefreshInterval": null,
+	"CustomType": "Query",
+	"QueryInterval": null,
+	"AppLaunchUrl": null,
+	"UrlMatch": null,
+	"QueryURL": "/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder?$filter=MaintenanceProcessingPhase%20eq%20%273%27",
+	"QueryConfiguration": {
+		"QueryURLCollectionRoot": "$.d.results",
+		"QueryEntityKeyPaths": [
+			"$.d.__metadata.uri"
+		],
+		"EntityRootElement": "d",
+		"CacheQueryResult": false,
+		"RequestHttpMethod": "GET"
+	},
+	"QueryReturnsEntityCollection": true,
+	"NewsEnabled": false,
+	"AutoSubscribe": true,
+	"HiddenSubscription": false,
+	"SubscriptionParameters": [],
+	"ResourceIdentifiers": [
+		{
+			"ImagePaths": "",
+			"Uri": "",
+			"Order": 0,
+			"Shared": false
+		}
+	],
+	"Parameters": {
+		"Parameters": [
+			{
+				"Name": "MaintenanceOrder",
+				"Propagate": false,
+				"ResourceOrderNumber": 0,
+				"Value": "$.d.MaintenanceOrder",
+				"displayName": "SalesOrderId"
+			}
+		]
+	},
+	"APNSEnabled": true,
+	"NotificationMessages": {
+		"Messages": []
+	},
+	"NotificationRules": [],
+	"ActionConfiguration": {
+		"Category": "0978089F-655F-42BF-AA23-956B4AC99D18",
+		"Actions": [
+			{
+				"ActionName": "CancelTechnicalCompletion",
+				"ActionUrl": "/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrderCanceltechnicalcomplete?MaintenanceOrder='${MaintenanceOrder}'&ActionName='CANCEL_TECO_WITH_NOTIF'&RefDatetime=",
+				"XCSRFTokenUrl": "/sap/opu/odata/sap/EAM_OBJPG_MAINTENANCEORDER_SRV/C_ObjPgMaintOrder(MaintenanceOrder='${MaintenanceOrder}')",
+				"BehaviorAfterAction": "ACTIVE",
+				"HttpMethod": "POST",
+				"Nature": "Positive",
+				"EnabledForDeviceNotification": false,
+				"ActionBody": "",
+				"ActionBody@com.sap.mck.display.useCRLF": false,
+				"ActionHeaders": [
+					{
+						"HeaderName": "X-Requested-With",
+						"HeaderValue": "XMLHttpRequestAction"
+					}
+				],
+				"ActionParameters": [
+					{
+						"name": "setstatus",
+						"type": "SelectList",
+						"selectListProperties": {
+							"choices": [
+								{
+									"label": [
+										{
+											"language": "EN",
+											"text": "Put in Process Again"
+										}
+									],
+									"value": "Put in Process Again"
+								},
+								{
+									"label": [
+										{
+											"language": "EN",
+											"text": "Keep Completed Status"
+										}
+									],
+									"value": "Keep Completed Status"
+								}
+							]
+						},
+						"maxLength": 255,
+						"defaultValue": "Put in Process Again",
+						"enabledForDeviceNotification": false,
+						"isKey": false,
+						"nullable": true,
+						"label": [
+							{
+								"language": "EN",
+								"text": "Set Status of Assigned Notifications"
+							}
+						]
+					}
+				],
+				"Labels": [
+					{
+						"language": "EN",
+						"text": "Cancel Technical Completion"
+					}
+				]
+			}
+		],
+		"XCSRFTokenUrl": ""
+	},
+	"CustomRequestProperties": {
+		"RequestHttpMethod": "GET",
+		"RequestBody": "",
+		"RequestHeaders": []
+	},
+	"TemplateName": "User defined template",
+	"CardClass": "HtmlTemplate",
+	"useHtmlAsMapping": true,
+	"SubscribableTo": {
+		"Users": []
+	},
+	"Shared": false
+}
