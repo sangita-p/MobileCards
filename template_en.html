@@ -1,0 +1,85 @@
+<div id="mySimpleTemplate" class="myTemplate" data-type="text/x-handlebars-template">
+    <div class="header">
+        <h4>
+            Order
+        </h4>
+        &nbsp;
+        <span class="name">
+            {{d.Maintenanceorderdesc}} ({{d.Maintenanceorder}})
+        </span>
+    </div>
+    <div class="card-content">
+        <div class="all">
+            <div class="title-content">
+                <span class="title">
+                    Operation
+                </span>
+                <br>
+                <span class="content">
+                    {{d.Maintenanceorderoperation}} ({{d.Operationdescription}})
+                </span>
+            </div>
+            <div class="title-content">
+                <span class="title">
+                    Order Type
+                </span>
+                <br>
+                <span class="content">
+                    {{d.Maintenanceordertype}}
+                </span>
+            </div>
+
+            <div class="title-content">
+                <span class="title">
+                    Clocking Status
+                </span>
+                <br>
+                <span class="content">
+                    {{d.EventStatus}}
+                </span>
+            </div>
+
+
+            <div class="title-content">
+                <span class="title">
+                    Planned Work
+                </span>
+                <br>
+                <span class="content">
+                    {{d.Operationplannedwork}}{{d.Operationplannedworkunit}}
+                </span>
+            </div>
+
+            <div class="title-content">
+                <span class="title">
+                    Opration Duration
+                </span>
+                <br>
+                <span class="content">
+                    {{d.Operationduration}}{{d.Operationdurationunit}}
+                </span>
+            </div>
+            <div class="title-content">
+                <span class="title">
+                    Operation Work Center
+                </span>
+                <br>
+                <span class="content">
+                    {{d.Workcenter}}
+                </span>
+            </div>
+
+
+            <div class="title-content">
+                <span class="title">
+                    Maintenance Work Center
+                </span>
+                <br>
+                <span class="content">
+                    {{d.Maintordmainworkcenter}}
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>

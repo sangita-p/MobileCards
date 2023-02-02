@@ -1,0 +1,190 @@
+{
+	"Name": "mClock",
+	"Version": "1.1",
+	"Connection": "n1dmob",
+	"Descriptions": [
+		{
+			"language": "EN",
+			"text": ""
+		}
+	],
+	"GatekeeperConfiguration": null,
+	"SortCardsWith": null,
+	"RefreshInterval": null,
+	"CustomType": "Query",
+	"QueryInterval": null,
+	"AppLaunchUrl": null,
+	"UrlMatch": null,
+	"QueryURL": "/sap/opu/odata/ISAMMCCO/CLOCK_SOL_SRV/MaintenanceOperationSet?$filter=Email eq '${userId}'",
+	"QueryConfiguration": {
+		"QueryURLCollectionRoot": "$.d.results",
+		"QueryEntityKeyPaths": [
+			"$.d.__metadata.uri"
+		],
+		"EntityRootElement": "d",
+		"CacheQueryResult": false,
+		"RequestHttpMethod": "GET"
+	},
+	"QueryReturnsEntityCollection": true,
+	"NewsEnabled": false,
+	"AutoSubscribe": true,
+	"HiddenSubscription": false,
+	"SubscriptionParameters": [],
+	"ResourceIdentifiers": [
+		{
+			"Order": 0,
+			"Uri": "",
+			"ImagePaths": "",
+			"Shared": false,
+			"RequestHttpMethod": "GET"
+		}
+	],
+	"Parameters": {
+		"Parameters": [
+			{
+				"Name": "MaintenanceOrder",
+				"Propagate": false,
+				"ResourceOrderNumber": 0,
+				"Value": "$.d.Maintenanceorder",
+				"displayName": "MaintenanceOrder"
+			},
+			{
+				"Name": "MaintenanceOrderOperation",
+				"Propagate": false,
+				"ResourceOrderNumber": 0,
+				"Value": "$.d.Maintenanceorderoperation",
+				"displayName": "MaintenanceOrderOperation"
+			}
+		]
+	},
+	"APNSEnabled": true,
+	"NotificationMessages": {
+		"Messages": [
+			{
+				"language": "EN",
+				"notificationType": "NEW",
+				"text": "New order ${MaintenanceOrder} with operation ${MaintenanceOrderOperation} assigned to you"
+			}
+		]
+	},
+	"NotificationRules": [],
+	"ActionConfiguration": {
+		"Category": "0978089F-655F-42BF-AA23-956B4AC99D18",
+		"Actions": [
+			{
+				"ActionName": "clockon",
+				"ActionUrl": "/sap/opu/odata/ISAMMCCO/CLOCK_SOL_SRV/ClockOn?MaintenanceOrder='${MaintenanceOrder}'&MaintenanceOrderOperation='${MaintenanceOrderOperation}'&MaintenanceOrderSubOperation=''",
+				"XCSRFTokenUrl": "/sap/opu/odata/ISAMMCCO/CLOCK_SOL_SRV/MaintenanceOperationSet(Maintenanceorder='${MaintenanceOrder}',Maintenanceorderoperation='${MaintenanceOrderOperation}',Maintenanceordersuboperation='')",
+				"BehaviorAfterAction": "ACTIVE",
+				"HttpMethod": "POST",
+				"Nature": "Positive",
+				"EnabledForDeviceNotification": true,
+				"ActionBody": "",
+				"ActionHeaders": [
+					{
+						"HeaderName": "X-Requested-With",
+						"HeaderValue": "XMLHttpRequestAction"
+					}
+				],
+				"ActionParameters": [],
+				"AddCarriageReturn": false,
+				"Labels": [
+					{
+						"language": "EN",
+						"text": "Clock On"
+					}
+				]
+			},
+			{
+				"ActionName": "clockoff",
+				"ActionUrl": "/sap/opu/odata/ISAMMCCO/CLOCK_SOL_SRV/ClockOff?MaintenanceOrder='${MaintenanceOrder}'&MaintenanceOrderOperation='${MaintenanceOrderOperation}'&RText='${Comment}'&FlagConfirm='${fconfirm}'",
+				"XCSRFTokenUrl": "/sap/opu/odata/ISAMMCCO/CLOCK_SOL_SRV/MaintenanceOperationSet(Maintenanceorder='${MaintenanceOrder}',Maintenanceorderoperation='${MaintenanceOrderOperation}',Maintenanceordersuboperation='')",
+				"BehaviorAfterAction": "ACTIVE",
+				"HttpMethod": "POST",
+				"Nature": "Negative",
+				"EnabledForDeviceNotification": true,
+				"ActionBody": "",
+				"ActionHeaders": [
+					{
+						"HeaderName": "X-Requested-With",
+						"HeaderValue": "XMLHttpRequestAction"
+					}
+				],
+				"ActionParameters": [
+					{
+						"name": "Comment",
+						"type": "Edm.String",
+						"maxLength": 255,
+						"defaultValue": "",
+						"enabledForDeviceNotification": false,
+						"isKey": false,
+						"nullable": true,
+						"label": [
+							{
+								"language": "EN",
+								"text": "Comment"
+							}
+						]
+					},
+					{
+						"name": "fconfirm",
+						"type": "SelectList",
+						"selectListProperties": {
+							"choices": [
+								{
+									"label": [
+										{
+											"language": "EN",
+											"text": "No"
+										}
+									],
+									"value": "No"
+								},
+								{
+									"label": [
+										{
+											"language": "EN",
+											"text": "Yes"
+										}
+									],
+									"value": "Yes"
+								}
+							]
+						},
+						"maxLength": 255,
+						"defaultValue": "No",
+						"enabledForDeviceNotification": false,
+						"isKey": false,
+						"nullable": true,
+						"label": [
+							{
+								"language": "EN",
+								"text": "Final Confirmation"
+							}
+						]
+					}
+				],
+				"AddCarriageReturn": false,
+				"Labels": [
+					{
+						"language": "EN",
+						"text": "Clock Off "
+					}
+				]
+			}
+		],
+		"XCSRFTokenUrl": ""
+	},
+	"CustomRequestProperties": {
+		"RequestHttpMethod": "GET",
+		"RequestBody": "",
+		"RequestHeaders": []
+	},
+	"TemplateName": "User defined template",
+	"CardClass": "HtmlTemplate",
+	"useHtmlAsMapping": true,
+	"SubscribableTo": {
+		"Users": []
+	},
+	"Shared": false
+}

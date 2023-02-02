@@ -1,0 +1,12 @@
+[
+	{
+		"DestinationName": "cf-ms",
+		"MobileUrl": "https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/cockpit/v1/org/iMRO-CF-Provider/space/dev",
+		"ReferenceCardTypeId": "09786D8D-6A2D-40E7-B67E-C589D3145230",
+		"Backend": "n1dmob",
+		"Validate": false,
+		"PublishAt": "2022-04-21T06:39:58.919Z",
+		"PublishModifiedTag": "\"9b785245c69b456584152bc2af9615ae\"",
+		"PublishVerison": "1.0"
+	}
+]
