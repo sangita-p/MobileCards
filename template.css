@@ -1,0 +1,104 @@
+.myTemplate {
+    /* background: linear-gradient(to bottom,#26374b,#2b5f94); */
+    color: #fafafa;
+    font-family: Helvetica, Arial;
+    height: 50vh;
+    }
+    
+    .header {
+    background: linear-gradient(to bottom,#81BF97,#9dcfae);
+    color: black;
+    display: flex;
+    padding: 1rem;
+    }
+    
+    .header h4{
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    color: black;
+    font-weight: bold;
+    line-height: 2.5rem;
+    flex: 1 1;
+    white-space: nowrap;
+    }
+    
+    .header .name{
+    font-weight: normal;
+    margin-top: 1.25rem;
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+    text-align: right;
+    white-space: normal;
+    }
+    
+    .card-content {
+    background: linear-gradient(to bottom,#81BF97,#81BF97);
+    background-color: rgba(0,0,0,0.22);
+    color: black;
+    font-weight: bold;
+    display: flex;
+    height: 30rem;
+    padding: 1rem;
+    /* margin-bottom: 2rem; */
+    justify-content: space-between;
+    }
+    
+    .card-content img{
+    height:3rem;
+    }
+    
+    .card-content .title-content{
+    margin-bottom:1.25rem;
+    }
+    
+    .card-content .title{
+    font-size: 0.75rem;
+    }
+    
+    .card-content .content{
+    font-size: 1rem;
+    color: black;
+    }
+    
+    hr{
+    border-color: #DFDFDF;
+    }
+    
+    .desciprtion{
+    padding:1rem
+    }
+    
+    .desciprtion .d-title{
+    font-weight: bold;
+    }
+    
+    .desciprtion .d-title-a{
+    font-weight: bold;
+    float:right;
+    }
+    
+    .card-contentback {
+        background: linear-gradient(to bottom,#81BF97,#81BF97);
+        background-color: rgba(0,0,0,0.22);
+        color: black;
+        font-weight: bold;
+        display: flex;
+        height: 36rem;
+        padding: 1rem;
+        /* margin-bottom: 2rem; */
+        justify-content: space-between;
+        }
+        
+        .card-contentback .title-contentback{
+        margin-bottom:1.25rem;
+        }
+        
+        .card-contentback .titleback{
+        font-size: 0.75rem;
+        }
+        
+        .card-content .contentback{
+        font-size: 1rem;
+        color: black;
+        }

@@ -1,0 +1,111 @@
+<div id="mySimpleTemplate" class="myTemplate" data-type="text/x-handlebars-template">
+    <div class="header">
+        <img src="order.png" alt="" > &nbsp;&nbsp;
+        <h4>
+            Order
+        </h4>
+        &nbsp;
+        <span class="name">
+            {{d.Maintenanceorderdesc}} ({{d.Maintenanceorder}})
+        </span>
+    </div>
+    <div class="card-content">
+        <div class="all">
+            <div class="title-content">
+                <span class="title">
+                    Operation
+                </span>
+                <br>
+                <span class="content">
+                    {{d.Maintenanceorderoperation}}
+                </span>
+            </div>
+            <div class="title-content">
+                <span class="title">
+                    Priority
+                </span>
+                <br>
+                <span class="content" style="font-weight:900; font-size:1.5rem;">
+                    {{lcsHelper d.Maintpriority}}
+                </span>
+            </div>
+            <!-- <div class="title-content">
+                <span class="title">
+                    Assignment Status
+                </span>
+                <br>
+                <span class="content">
+                 
+                </span>
+            </div> -->
+
+            <div class="title-content">
+                <span class="title">
+                    Performing Work Center
+                </span>
+                <br>
+                <span class="content">
+                    {{d.Workcenter}}
+                </span>
+            </div>
+            <!-- <div class="title-content">
+                <span class="title">
+                    Equipment
+                </span>
+                <br>
+                <span class="content">
+                  
+                </span>
+            </div> -->
+
+            <!-- <div class="title-content">
+                <span class="title">
+                    Functional Location
+                </span>
+                <br>
+                <span class="content">
+                    
+                </span>
+            </div> -->
+            <div class="title-content">
+                <span class="title">
+                    Planned Start
+                </span>
+                <br>
+                <span class="content">
+                    {{c2gEdmDateTime "M/d/yyyy" d.Maintordbasicstartdate}}
+                </span>
+            </div>
+
+
+            <div class="title-content">
+                <span class="title">
+                    Planned End
+                </span>
+                <br>
+                <span class="content">
+                    {{c2gEdmDateTime "M/d/yyyy" d.Maintordbasicenddate}}
+                </span>
+            </div>
+            <div class="title-content">
+                <span class="title">
+                    Work
+                </span>
+                <br>
+                <span class="content">
+                    {{d.Operationplannedwork}}{{d.Operationplannedworkunit}}
+                </span>
+            </div>
+            <div class="title-content">
+                <span class="title">
+                    Planned Plant
+                </span>
+                <br>
+                <span class="content">
+                    {{d.Plannedplant}}
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,152 @@
+{
+	"Name": "M-Assign",
+	"Version": "1.3",
+	"Connection": "n1dmob",
+	"Descriptions": [
+		{
+			"language": "EN",
+			"text": ""
+		}
+	],
+	"GatekeeperConfiguration": null,
+	"SortCardsWith": null,
+	"RefreshInterval": null,
+	"CustomType": "Query",
+	"QueryInterval": "P1D",
+	"AppLaunchUrl": null,
+	"UrlMatch": null,
+	"QueryURL": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet?$filter=Email eq '${userId}' and Start_date eq datetimeoffset'${date}' and End_date eq datetimeoffset'${end_date}'",
+	"QueryConfiguration": {
+		"QueryURLCollectionRoot": "$.d.results",
+		"QueryEntityKeyPaths": [
+			"$.d.__metadata.uri"
+		],
+		"EntityRootElement": "d",
+		"CacheQueryResult": false,
+		"RequestHttpMethod": "GET"
+	},
+	"QueryReturnsEntityCollection": true,
+	"NewsEnabled": false,
+	"AutoSubscribe": false,
+	"HiddenSubscription": false,
+	"SubscriptionParameters": [
+		{
+			"name": "date",
+			"type": "Edm.DateTime",
+			"maxLength": 255,
+			"defaultValue": "",
+			"isKey": false,
+			"nullable": true,
+			"label": [
+				{
+					"language": "EN",
+					"text": "Start Date"
+				}
+			]
+		},
+		{
+			"name": "end_date",
+			"type": "Edm.DateTime",
+			"maxLength": 255,
+			"defaultValue": "",
+			"isKey": false,
+			"nullable": true,
+			"label": [
+				{
+					"language": "EN",
+					"text": "End Date"
+				}
+			]
+		}
+	],
+	"ResourceIdentifiers": [
+		{
+			"Order": 0,
+			"Uri": "",
+			"ImagePaths": "",
+			"Shared": true,
+			"RequestHttpMethod": "GET"
+		}
+	],
+	"Parameters": {
+		"Parameters": [
+			{
+				"Name": "MaintenanceOrder",
+				"Value": "$.d.Maintenanceorder",
+				"Propagate": false,
+				"ResourceOrderNumber": 0
+			},
+			{
+				"Name": "MaintenanceOrderOperation",
+				"Value": "$.d.Maintenanceorderoperation",
+				"Propagate": false,
+				"ResourceOrderNumber": 0
+			},
+			{
+				"Name": "WorkCentre",
+				"Value": "$.d.Workcenter",
+				"Propagate": false,
+				"ResourceOrderNumber": 0
+			},
+			{
+				"Name": "PlannedPlant",
+				"Value": "$.d.Plannedplant",
+				"Propagate": false,
+				"ResourceOrderNumber": 0
+			},
+			{
+				"Name": "UserID",
+				"Value": "$.d.userId",
+				"Propagate": false,
+				"ResourceOrderNumber": 0
+			}
+		]
+	},
+	"APNSEnabled": true,
+	"NotificationMessages": {
+		"Messages": []
+	},
+	"NotificationRules": [],
+	"ActionConfiguration": {
+		"Category": "0978089F-655F-42BF-AA23-956B4AC99D18",
+		"Actions": [
+			{
+				"ActionName": "assign",
+				"ActionUrl": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/AssignPerRes?MaintenanceOrder='${MaintenanceOrder}'&MaintenanceOrderOperation='${MaintenanceOrderOperation}'&WorkCenter='${WorkCentre}'&PlannedPlant='${PlannedPlant}'&Email='${UserID}'",
+				"XCSRFTokenUrl": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='${MaintenanceOrder}',Maintenanceorderoperation='${MaintenanceOrderOperation}')",
+				"BehaviorAfterAction": "ACTIVE",
+				"HttpMethod": "POST",
+				"Nature": "Positive",
+				"EnabledForDeviceNotification": false,
+				"ActionBody": "",
+				"ActionBody@com.sap.mck.display.useCRLF": false,
+				"ActionHeaders": [
+					{
+						"HeaderName": "X-Requested-With",
+						"HeaderValue": "XMLHttpRequestAction"
+					}
+				],
+				"ActionParameters": [],
+				"Labels": [
+					{
+						"language": "EN",
+						"text": "Assign Operation"
+					}
+				]
+			}
+		],
+		"XCSRFTokenUrl": ""
+	},
+	"CustomRequestProperties": {
+		"RequestHttpMethod": "GET",
+		"RequestBody": "",
+		"RequestHeaders": []
+	},
+	"TemplateName": "User defined template",
+	"CardClass": "HtmlTemplate",
+	"useHtmlAsMapping": true,
+	"SubscribableTo": {
+		"Users": []
+	},
+	"Shared": false
+}

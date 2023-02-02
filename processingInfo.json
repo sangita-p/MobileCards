@@ -1,0 +1,1789 @@
+[
+    {
+        "name": "1100 - UserInformationAssemblyStep",
+        "duration": 0,
+        "status": "success"
+    },
+    {
+        "name": "1150 - MergeSharedSubscriptionsAssemblyStep",
+        "duration": 0,
+        "status": "success"
+    },
+    {
+        "name": "1250 - DryrunSubscriptionStep",
+        "duration": 0,
+        "status": "success"
+    },
+    {
+        "name": "1275 - CreatePrototypeCardInstancesStep",
+        "duration": 2,
+        "status": "success"
+    },
+    {
+        "name": "1600 - OndemandQueryCardTypeHandlingStep",
+        "duration": 1375,
+        "operations": [
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    }
+                ]
+            },
+            {
+                "name": "PREPARING REQUEST HEADERS",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "status": "success",
+                "description": "preparing the query request headers",
+                "values": [
+                    {
+                        "type": "header",
+                        "name": "Accept",
+                        "beforeParameterReplacement": "application/json",
+                        "afterParameterReplacement": "application/json"
+                    }
+                ]
+            },
+            {
+                "name": "BUILDING QUERY",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "status": "success",
+                "description": "building backend query",
+                "values": [
+                    {
+                        "type": "uri",
+                        "name": "QueryURL",
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet?$filter=Email%20eq%20'syedshadan.q@hcl.com'",
+                        "afterParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet?$filter=Email%20eq%20'syedshadan.q@hcl.com'"
+                    },
+                    {
+                        "type": "uri",
+                        "name": "FinishedQueryUrl",
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet?$filter=Email%20eq%20'syedshadan.q@hcl.com'",
+                        "afterParameterReplacement": "//proxy/n1dmob/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet?$filter=Email%20eq%20'syedshadan.q@hcl.com'"
+                    }
+                ]
+            },
+            {
+                "name": "EXECUTING REQUEST",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "status": "success",
+                "description": "executing request to fetch content"
+            },
+            {
+                "name": "PARSE JSON ENTITIES",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "status": "success",
+                "description": "parsing json entities from response",
+                "values": [
+                    {
+                        "type": "jsonPath",
+                        "name": "CollectionRoot",
+                        "beforeParameterReplacement": "$.d.results",
+                        "afterParameterReplacement": "$.d.results"
+                    },
+                    {
+                        "type": "jsonPath",
+                        "name": "EntityKey",
+                        "beforeParameterReplacement": "$.d.__metadata.uri",
+                        "afterParameterReplacement": "$.d.__metadata.uri"
+                    }
+                ],
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "extracted entity content",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4004495',Maintenanceorderoperation='0020')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4004495',Maintenanceorderoperation='0020')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"\",\"Mandt\":\"\",\"Maintenanceorder\":\"4004495\",\"Maintenanceorderdesc\":\"\",\"Maintenanceorderoperation\":\"0020\",\"Maintenanceprocessingphasedesc\":\"Outstanding\",\"Maintenanceprocessingphase\":\"0\",\"Plannedplant\":\"X003\",\"Maintenanceordertype\":\"PM01\",\"Workcenter\":\"AF\",\"Maintenanceordertypename\":\"Maintenance order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"XABC\",\"Technicalobjectdescription\":\"B787 Dreamliner\",\"Techobjisequiporfuncnlloc\":\"EAMS_FL\",\"Techobjisequiporfuncnllocdesc\":\"Functional Location\",\"Operationdescription\":\"M1 type Notification\",\"Operationtechnicalobjectlabel\":\"XABC\",\"Operationtechnicalobjectdesc\":\"B787 Dreamliner\",\"Operationtechobjisequip\":\"EAMS_FL\",\"Operationtechobjisequipdesc\":\"Functional Location\",\"Operationmaintenancenotif\":\"10000729\",\"Operationmaintnotificationtext\":\"M1 type Notification\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Airframe - Airframe\",\"Operationhaslongtext\":false,\"Plantname\":\"Aircraft\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"H\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"H\",\"Operationquantity\":\"1.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"PM\",\"Maintprioritytypedesc\":\"PM priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"10000729\",\"Maintenancenotificationtext\":\"M1 type Notification\",\"Maintenanceplanningplant\":\"X003\",\"Maintenanceplanningplantname\":\"Aircraft\",\"Maintenanceplannergroup\":\"A1\",\"Maintenanceplannergroupname\":\"A/C Maintenance\",\"Maintenancerevision\":\"\",\"Maintordbasicstartdate\":\"/Date(1619568000000)/\",\"Maintordbasicenddate\":\"/Date(1619568000000)/\",\"Maintordmainworkcenter\":\"AF\",\"Mainworkcentertext\":\"Airframe - Airframe\",\"Maintordmainworkcenterplant\":\"X003\",\"Mainworkcenterplantname\":\"Aircraft\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1619568000000)/\",\"Maintenanceplant\":\"X003\",\"Maintenanceplantname\":\"Aircraft\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1619568000000)/\",\"Scheduledbasicstarttime\":\"PT18H00M00S\",\"Scheduledbasicenddate\":\"/Date(1619568000000)/\",\"Scheduledbasicendtime\":\"PT18H00M00S\",\"Creationdate\":\"/Date(1619568000000)/\",\"Createdbyuser\":\"NKAUR\",\"Lastchangedate\":\"/Date(1619568000000)/\",\"Lastchangedbyuser\":\"NKAUR\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000433100000002\",\"Operationworkcenterinternalid\":\"10000208\",\"Maintenanceorderinternalid\":\"OR000004004495\",\"UserStatus\":\"Not Assigned\",\"Statusprofile\":\"\",\"Statuscode\":\"\",\"Plant\":\"X003\",\"Technicalobject\":\"XABC\",\"Maintorderresppartnerfunction\":\"VW\",\"Maintorderconfirmation\":\"0000017682\",\"Maintoperationtechnicalobject\":\"XABC\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracting entity keys using odata v2 key path",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4004495',Maintenanceorderoperation='0020')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4004495',Maintenanceorderoperation='0020')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"\",\"Mandt\":\"\",\"Maintenanceorder\":\"4004495\",\"Maintenanceorderdesc\":\"\",\"Maintenanceorderoperation\":\"0020\",\"Maintenanceprocessingphasedesc\":\"Outstanding\",\"Maintenanceprocessingphase\":\"0\",\"Plannedplant\":\"X003\",\"Maintenanceordertype\":\"PM01\",\"Workcenter\":\"AF\",\"Maintenanceordertypename\":\"Maintenance order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"XABC\",\"Technicalobjectdescription\":\"B787 Dreamliner\",\"Techobjisequiporfuncnlloc\":\"EAMS_FL\",\"Techobjisequiporfuncnllocdesc\":\"Functional Location\",\"Operationdescription\":\"M1 type Notification\",\"Operationtechnicalobjectlabel\":\"XABC\",\"Operationtechnicalobjectdesc\":\"B787 Dreamliner\",\"Operationtechobjisequip\":\"EAMS_FL\",\"Operationtechobjisequipdesc\":\"Functional Location\",\"Operationmaintenancenotif\":\"10000729\",\"Operationmaintnotificationtext\":\"M1 type Notification\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Airframe - Airframe\",\"Operationhaslongtext\":false,\"Plantname\":\"Aircraft\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"H\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"H\",\"Operationquantity\":\"1.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"PM\",\"Maintprioritytypedesc\":\"PM priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"10000729\",\"Maintenancenotificationtext\":\"M1 type Notification\",\"Maintenanceplanningplant\":\"X003\",\"Maintenanceplanningplantname\":\"Aircraft\",\"Maintenanceplannergroup\":\"A1\",\"Maintenanceplannergroupname\":\"A/C Maintenance\",\"Maintenancerevision\":\"\",\"Maintordbasicstartdate\":\"/Date(1619568000000)/\",\"Maintordbasicenddate\":\"/Date(1619568000000)/\",\"Maintordmainworkcenter\":\"AF\",\"Mainworkcentertext\":\"Airframe - Airframe\",\"Maintordmainworkcenterplant\":\"X003\",\"Mainworkcenterplantname\":\"Aircraft\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1619568000000)/\",\"Maintenanceplant\":\"X003\",\"Maintenanceplantname\":\"Aircraft\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1619568000000)/\",\"Scheduledbasicstarttime\":\"PT18H00M00S\",\"Scheduledbasicenddate\":\"/Date(1619568000000)/\",\"Scheduledbasicendtime\":\"PT18H00M00S\",\"Creationdate\":\"/Date(1619568000000)/\",\"Createdbyuser\":\"NKAUR\",\"Lastchangedate\":\"/Date(1619568000000)/\",\"Lastchangedbyuser\":\"NKAUR\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000433100000002\",\"Operationworkcenterinternalid\":\"10000208\",\"Maintenanceorderinternalid\":\"OR000004004495\",\"UserStatus\":\"Not Assigned\",\"Statusprofile\":\"\",\"Statuscode\":\"\",\"Plant\":\"X003\",\"Technicalobject\":\"XABC\",\"Maintorderresppartnerfunction\":\"VW\",\"Maintorderconfirmation\":\"0000017682\",\"Maintoperationtechnicalobject\":\"XABC\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracted entity content",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0020')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0020')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"\",\"Mandt\":\"\",\"Maintenanceorder\":\"4005249\",\"Maintenanceorderdesc\":\"Schedule Work Order\",\"Maintenanceorderoperation\":\"0020\",\"Maintenanceprocessingphasedesc\":\"Outstanding\",\"Maintenanceprocessingphase\":\"0\",\"Plannedplant\":\"X003\",\"Maintenanceordertype\":\"A002\",\"Workcenter\":\"AF\",\"Maintenanceordertypename\":\"Defect Order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"B747-400\",\"Technicalobjectdescription\":\"Aircraft Boing 747-400\",\"Techobjisequiporfuncnlloc\":\"EAMS_FL\",\"Techobjisequiporfuncnllocdesc\":\"Functional Location\",\"Operationdescription\":\"Operation 2\",\"Operationtechnicalobjectlabel\":\"\",\"Operationtechnicalobjectdesc\":\"\",\"Operationtechobjisequip\":\"\",\"Operationtechobjisequipdesc\":\"\",\"Operationmaintenancenotif\":\"\",\"Operationmaintnotificationtext\":\"\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Airframe - Airframe\",\"Operationhaslongtext\":false,\"Plantname\":\"Aircraft\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"H\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"H\",\"Operationquantity\":\"1.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"PM\",\"Maintprioritytypedesc\":\"PM priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"\",\"Maintenancenotificationtext\":\"\",\"Maintenanceplanningplant\":\"X003\",\"Maintenanceplanningplantname\":\"Aircraft\",\"Maintenanceplannergroup\":\"A1\",\"Maintenanceplannergroupname\":\"A/C Maintenance\",\"Maintenancerevision\":\"\",\"Maintordbasicstartdate\":\"/Date(1622160000000)/\",\"Maintordbasicenddate\":\"/Date(1622678400000)/\",\"Maintordmainworkcenter\":\"AF\",\"Mainworkcentertext\":\"Airframe - Airframe\",\"Maintordmainworkcenterplant\":\"X003\",\"Mainworkcenterplantname\":\"Aircraft\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1622160000000)/\",\"Maintenanceplant\":\"X003\",\"Maintenanceplantname\":\"Aircraft\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1622160000000)/\",\"Scheduledbasicstarttime\":\"PT00H00M00S\",\"Scheduledbasicenddate\":\"/Date(1622678400000)/\",\"Scheduledbasicendtime\":\"PT24H00M00S\",\"Creationdate\":\"/Date(1622073600000)/\",\"Createdbyuser\":\"AGAUR\",\"Lastchangedate\":\"/Date(1622073600000)/\",\"Lastchangedbyuser\":\"AGAUR\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000509000000002\",\"Operationworkcenterinternalid\":\"10000208\",\"Maintenanceorderinternalid\":\"OR000004005249\",\"UserStatus\":\"WIP\",\"Statusprofile\":\"ZMRO0001\",\"Statuscode\":\"E0001\",\"Plant\":\"X003\",\"Technicalobject\":\"B747-400\",\"Maintorderresppartnerfunction\":\"VW\",\"Maintorderconfirmation\":\"0000019162\",\"Maintoperationtechnicalobject\":\"\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracting entity keys using odata v2 key path",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0020')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0020')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"\",\"Mandt\":\"\",\"Maintenanceorder\":\"4005249\",\"Maintenanceorderdesc\":\"Schedule Work Order\",\"Maintenanceorderoperation\":\"0020\",\"Maintenanceprocessingphasedesc\":\"Outstanding\",\"Maintenanceprocessingphase\":\"0\",\"Plannedplant\":\"X003\",\"Maintenanceordertype\":\"A002\",\"Workcenter\":\"AF\",\"Maintenanceordertypename\":\"Defect Order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"B747-400\",\"Technicalobjectdescription\":\"Aircraft Boing 747-400\",\"Techobjisequiporfuncnlloc\":\"EAMS_FL\",\"Techobjisequiporfuncnllocdesc\":\"Functional Location\",\"Operationdescription\":\"Operation 2\",\"Operationtechnicalobjectlabel\":\"\",\"Operationtechnicalobjectdesc\":\"\",\"Operationtechobjisequip\":\"\",\"Operationtechobjisequipdesc\":\"\",\"Operationmaintenancenotif\":\"\",\"Operationmaintnotificationtext\":\"\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Airframe - Airframe\",\"Operationhaslongtext\":false,\"Plantname\":\"Aircraft\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"H\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"H\",\"Operationquantity\":\"1.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"PM\",\"Maintprioritytypedesc\":\"PM priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"\",\"Maintenancenotificationtext\":\"\",\"Maintenanceplanningplant\":\"X003\",\"Maintenanceplanningplantname\":\"Aircraft\",\"Maintenanceplannergroup\":\"A1\",\"Maintenanceplannergroupname\":\"A/C Maintenance\",\"Maintenancerevision\":\"\",\"Maintordbasicstartdate\":\"/Date(1622160000000)/\",\"Maintordbasicenddate\":\"/Date(1622678400000)/\",\"Maintordmainworkcenter\":\"AF\",\"Mainworkcentertext\":\"Airframe - Airframe\",\"Maintordmainworkcenterplant\":\"X003\",\"Mainworkcenterplantname\":\"Aircraft\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1622160000000)/\",\"Maintenanceplant\":\"X003\",\"Maintenanceplantname\":\"Aircraft\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1622160000000)/\",\"Scheduledbasicstarttime\":\"PT00H00M00S\",\"Scheduledbasicenddate\":\"/Date(1622678400000)/\",\"Scheduledbasicendtime\":\"PT24H00M00S\",\"Creationdate\":\"/Date(1622073600000)/\",\"Createdbyuser\":\"AGAUR\",\"Lastchangedate\":\"/Date(1622073600000)/\",\"Lastchangedbyuser\":\"AGAUR\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000509000000002\",\"Operationworkcenterinternalid\":\"10000208\",\"Maintenanceorderinternalid\":\"OR000004005249\",\"UserStatus\":\"WIP\",\"Statusprofile\":\"ZMRO0001\",\"Statuscode\":\"E0001\",\"Plant\":\"X003\",\"Technicalobject\":\"B747-400\",\"Maintorderresppartnerfunction\":\"VW\",\"Maintorderconfirmation\":\"0000019162\",\"Maintoperationtechnicalobject\":\"\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracted entity content",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0030')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0030')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"\",\"Mandt\":\"\",\"Maintenanceorder\":\"4005249\",\"Maintenanceorderdesc\":\"Schedule Work Order\",\"Maintenanceorderoperation\":\"0030\",\"Maintenanceprocessingphasedesc\":\"Outstanding\",\"Maintenanceprocessingphase\":\"0\",\"Plannedplant\":\"X003\",\"Maintenanceordertype\":\"A002\",\"Workcenter\":\"AF\",\"Maintenanceordertypename\":\"Defect Order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"B747-400\",\"Technicalobjectdescription\":\"Aircraft Boing 747-400\",\"Techobjisequiporfuncnlloc\":\"EAMS_FL\",\"Techobjisequiporfuncnllocdesc\":\"Functional Location\",\"Operationdescription\":\"Operation 3\",\"Operationtechnicalobjectlabel\":\"\",\"Operationtechnicalobjectdesc\":\"\",\"Operationtechobjisequip\":\"\",\"Operationtechobjisequipdesc\":\"\",\"Operationmaintenancenotif\":\"\",\"Operationmaintnotificationtext\":\"\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Airframe - Airframe\",\"Operationhaslongtext\":false,\"Plantname\":\"Aircraft\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"H\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"H\",\"Operationquantity\":\"1.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"PM\",\"Maintprioritytypedesc\":\"PM priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"\",\"Maintenancenotificationtext\":\"\",\"Maintenanceplanningplant\":\"X003\",\"Maintenanceplanningplantname\":\"Aircraft\",\"Maintenanceplannergroup\":\"A1\",\"Maintenanceplannergroupname\":\"A/C Maintenance\",\"Maintenancerevision\":\"\",\"Maintordbasicstartdate\":\"/Date(1622160000000)/\",\"Maintordbasicenddate\":\"/Date(1622678400000)/\",\"Maintordmainworkcenter\":\"AF\",\"Mainworkcentertext\":\"Airframe - Airframe\",\"Maintordmainworkcenterplant\":\"X003\",\"Mainworkcenterplantname\":\"Aircraft\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1622160000000)/\",\"Maintenanceplant\":\"X003\",\"Maintenanceplantname\":\"Aircraft\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1622160000000)/\",\"Scheduledbasicstarttime\":\"PT00H00M00S\",\"Scheduledbasicenddate\":\"/Date(1622678400000)/\",\"Scheduledbasicendtime\":\"PT24H00M00S\",\"Creationdate\":\"/Date(1622073600000)/\",\"Createdbyuser\":\"AGAUR\",\"Lastchangedate\":\"/Date(1622073600000)/\",\"Lastchangedbyuser\":\"AGAUR\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000509000000003\",\"Operationworkcenterinternalid\":\"10000208\",\"Maintenanceorderinternalid\":\"OR000004005249\",\"UserStatus\":\"WIP\",\"Statusprofile\":\"ZMRO0001\",\"Statuscode\":\"E0001\",\"Plant\":\"X003\",\"Technicalobject\":\"B747-400\",\"Maintorderresppartnerfunction\":\"VW\",\"Maintorderconfirmation\":\"0000019163\",\"Maintoperationtechnicalobject\":\"\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracting entity keys using odata v2 key path",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0030')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0030')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"\",\"Mandt\":\"\",\"Maintenanceorder\":\"4005249\",\"Maintenanceorderdesc\":\"Schedule Work Order\",\"Maintenanceorderoperation\":\"0030\",\"Maintenanceprocessingphasedesc\":\"Outstanding\",\"Maintenanceprocessingphase\":\"0\",\"Plannedplant\":\"X003\",\"Maintenanceordertype\":\"A002\",\"Workcenter\":\"AF\",\"Maintenanceordertypename\":\"Defect Order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"B747-400\",\"Technicalobjectdescription\":\"Aircraft Boing 747-400\",\"Techobjisequiporfuncnlloc\":\"EAMS_FL\",\"Techobjisequiporfuncnllocdesc\":\"Functional Location\",\"Operationdescription\":\"Operation 3\",\"Operationtechnicalobjectlabel\":\"\",\"Operationtechnicalobjectdesc\":\"\",\"Operationtechobjisequip\":\"\",\"Operationtechobjisequipdesc\":\"\",\"Operationmaintenancenotif\":\"\",\"Operationmaintnotificationtext\":\"\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Airframe - Airframe\",\"Operationhaslongtext\":false,\"Plantname\":\"Aircraft\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"H\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"H\",\"Operationquantity\":\"1.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"PM\",\"Maintprioritytypedesc\":\"PM priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"\",\"Maintenancenotificationtext\":\"\",\"Maintenanceplanningplant\":\"X003\",\"Maintenanceplanningplantname\":\"Aircraft\",\"Maintenanceplannergroup\":\"A1\",\"Maintenanceplannergroupname\":\"A/C Maintenance\",\"Maintenancerevision\":\"\",\"Maintordbasicstartdate\":\"/Date(1622160000000)/\",\"Maintordbasicenddate\":\"/Date(1622678400000)/\",\"Maintordmainworkcenter\":\"AF\",\"Mainworkcentertext\":\"Airframe - Airframe\",\"Maintordmainworkcenterplant\":\"X003\",\"Mainworkcenterplantname\":\"Aircraft\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1622160000000)/\",\"Maintenanceplant\":\"X003\",\"Maintenanceplantname\":\"Aircraft\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1622160000000)/\",\"Scheduledbasicstarttime\":\"PT00H00M00S\",\"Scheduledbasicenddate\":\"/Date(1622678400000)/\",\"Scheduledbasicendtime\":\"PT24H00M00S\",\"Creationdate\":\"/Date(1622073600000)/\",\"Createdbyuser\":\"AGAUR\",\"Lastchangedate\":\"/Date(1622073600000)/\",\"Lastchangedbyuser\":\"AGAUR\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000509000000003\",\"Operationworkcenterinternalid\":\"10000208\",\"Maintenanceorderinternalid\":\"OR000004005249\",\"UserStatus\":\"WIP\",\"Statusprofile\":\"ZMRO0001\",\"Statuscode\":\"E0001\",\"Plant\":\"X003\",\"Technicalobject\":\"B747-400\",\"Maintorderresppartnerfunction\":\"VW\",\"Maintorderconfirmation\":\"0000019163\",\"Maintoperationtechnicalobject\":\"\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracted entity content",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4003625',Maintenanceorderoperation='0020')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4003625',Maintenanceorderoperation='0020')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"\",\"Mandt\":\"\",\"Maintenanceorder\":\"4003625\",\"Maintenanceorderdesc\":\"GTL10\",\"Maintenanceorderoperation\":\"0020\",\"Maintenanceprocessingphasedesc\":\"Released\",\"Maintenanceprocessingphase\":\"2\",\"Plannedplant\":\"X003\",\"Maintenanceordertype\":\"A001\",\"Workcenter\":\"AF\",\"Maintenanceordertypename\":\"Aircraft order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"AIRC-03\",\"Technicalobjectdescription\":\"AIRC-03\",\"Techobjisequiporfuncnlloc\":\"EAMS_FL\",\"Techobjisequiporfuncnllocdesc\":\"Functional Location\",\"Operationdescription\":\"Dismantling Notif.\",\"Operationtechnicalobjectlabel\":\"AIRC-01\",\"Operationtechnicalobjectdesc\":\"AIRC-01\",\"Operationtechobjisequip\":\"EAMS_FL\",\"Operationtechobjisequipdesc\":\"Functional Location\",\"Operationmaintenancenotif\":\"300003416\",\"Operationmaintnotificationtext\":\"Dismantling Notif.\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Airframe - Airframe\",\"Operationhaslongtext\":false,\"Plantname\":\"Aircraft\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"H\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"H\",\"Operationquantity\":\"1.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"DF\",\"Maintprioritytypedesc\":\"AC Defect priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"\",\"Maintenancenotificationtext\":\"\",\"Maintenanceplanningplant\":\"X003\",\"Maintenanceplanningplantname\":\"Aircraft\",\"Maintenanceplannergroup\":\"\",\"Maintenanceplannergroupname\":\"\",\"Maintenancerevision\":\"00000005\",\"Maintordbasicstartdate\":\"/Date(1620345600000)/\",\"Maintordbasicenddate\":\"/Date(1620864000000)/\",\"Maintordmainworkcenter\":\"AF\",\"Mainworkcentertext\":\"Airframe - Airframe\",\"Maintordmainworkcenterplant\":\"X003\",\"Mainworkcenterplantname\":\"Aircraft\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1620345600000)/\",\"Maintenanceplant\":\"X003\",\"Maintenanceplantname\":\"Aircraft\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1621900800000)/\",\"Scheduledbasicstarttime\":\"PT07H00M00S\",\"Scheduledbasicenddate\":\"/Date(1624838400000)/\",\"Scheduledbasicendtime\":\"PT07H00M00S\",\"Creationdate\":\"/Date(1612483200000)/\",\"Createdbyuser\":\"MANORANJAN\",\"Lastchangedate\":\"/Date(1636502400000)/\",\"Lastchangedbyuser\":\"VKUMAR\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000348600000003\",\"Operationworkcenterinternalid\":\"10000208\",\"Maintenanceorderinternalid\":\"OR000004003625\",\"UserStatus\":\"WIP\",\"Statusprofile\":\"ZMRO0001\",\"Statuscode\":\"E0001\",\"Plant\":\"X003\",\"Technicalobject\":\"AIRC-03\",\"Maintorderresppartnerfunction\":\"VW\",\"Maintorderconfirmation\":\"0000019001\",\"Maintoperationtechnicalobject\":\"AIRC-01\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracting entity keys using odata v2 key path",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4003625',Maintenanceorderoperation='0020')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4003625',Maintenanceorderoperation='0020')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"\",\"Mandt\":\"\",\"Maintenanceorder\":\"4003625\",\"Maintenanceorderdesc\":\"GTL10\",\"Maintenanceorderoperation\":\"0020\",\"Maintenanceprocessingphasedesc\":\"Released\",\"Maintenanceprocessingphase\":\"2\",\"Plannedplant\":\"X003\",\"Maintenanceordertype\":\"A001\",\"Workcenter\":\"AF\",\"Maintenanceordertypename\":\"Aircraft order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"AIRC-03\",\"Technicalobjectdescription\":\"AIRC-03\",\"Techobjisequiporfuncnlloc\":\"EAMS_FL\",\"Techobjisequiporfuncnllocdesc\":\"Functional Location\",\"Operationdescription\":\"Dismantling Notif.\",\"Operationtechnicalobjectlabel\":\"AIRC-01\",\"Operationtechnicalobjectdesc\":\"AIRC-01\",\"Operationtechobjisequip\":\"EAMS_FL\",\"Operationtechobjisequipdesc\":\"Functional Location\",\"Operationmaintenancenotif\":\"300003416\",\"Operationmaintnotificationtext\":\"Dismantling Notif.\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Airframe - Airframe\",\"Operationhaslongtext\":false,\"Plantname\":\"Aircraft\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"H\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"H\",\"Operationquantity\":\"1.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"DF\",\"Maintprioritytypedesc\":\"AC Defect priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"\",\"Maintenancenotificationtext\":\"\",\"Maintenanceplanningplant\":\"X003\",\"Maintenanceplanningplantname\":\"Aircraft\",\"Maintenanceplannergroup\":\"\",\"Maintenanceplannergroupname\":\"\",\"Maintenancerevision\":\"00000005\",\"Maintordbasicstartdate\":\"/Date(1620345600000)/\",\"Maintordbasicenddate\":\"/Date(1620864000000)/\",\"Maintordmainworkcenter\":\"AF\",\"Mainworkcentertext\":\"Airframe - Airframe\",\"Maintordmainworkcenterplant\":\"X003\",\"Mainworkcenterplantname\":\"Aircraft\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1620345600000)/\",\"Maintenanceplant\":\"X003\",\"Maintenanceplantname\":\"Aircraft\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1621900800000)/\",\"Scheduledbasicstarttime\":\"PT07H00M00S\",\"Scheduledbasicenddate\":\"/Date(1624838400000)/\",\"Scheduledbasicendtime\":\"PT07H00M00S\",\"Creationdate\":\"/Date(1612483200000)/\",\"Createdbyuser\":\"MANORANJAN\",\"Lastchangedate\":\"/Date(1636502400000)/\",\"Lastchangedbyuser\":\"VKUMAR\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000348600000003\",\"Operationworkcenterinternalid\":\"10000208\",\"Maintenanceorderinternalid\":\"OR000004003625\",\"UserStatus\":\"WIP\",\"Statusprofile\":\"ZMRO0001\",\"Statuscode\":\"E0001\",\"Plant\":\"X003\",\"Technicalobject\":\"AIRC-03\",\"Maintorderresppartnerfunction\":\"VW\",\"Maintorderconfirmation\":\"0000019001\",\"Maintoperationtechnicalobject\":\"AIRC-01\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracted entity content",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4000890',Maintenanceorderoperation='0010')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4000890',Maintenanceorderoperation='0010')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"\",\"Mandt\":\"\",\"Maintenanceorder\":\"4000890\",\"Maintenanceorderdesc\":\"\",\"Maintenanceorderoperation\":\"0010\",\"Maintenanceprocessingphasedesc\":\"Completed for business\",\"Maintenanceprocessingphase\":\"6\",\"Plannedplant\":\"X002\",\"Maintenanceordertype\":\"MBLD\",\"Workcenter\":\"E-ASSY\",\"Maintenanceordertypename\":\"MRO Build Order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"10000739\",\"Technicalobjectdescription\":\"V2500 Engine\",\"Techobjisequiporfuncnlloc\":\"EAMS_EQUI\",\"Techobjisequiporfuncnllocdesc\":\"Equipment\",\"Operationdescription\":\"test\",\"Operationtechnicalobjectlabel\":\"\",\"Operationtechnicalobjectdesc\":\"\",\"Operationtechobjisequip\":\"\",\"Operationtechobjisequipdesc\":\"\",\"Operationmaintenancenotif\":\"\",\"Operationmaintnotificationtext\":\"\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Inspection Work Center\",\"Operationhaslongtext\":false,\"Plantname\":\"Engines\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"\",\"Operationquantity\":\"0.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"PM\",\"Maintprioritytypedesc\":\"PM priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"300001003\",\"Maintenancenotificationtext\":\"HPT - Visual Inspect\",\"Maintenanceplanningplant\":\"X002\",\"Maintenanceplanningplantname\":\"Engines\",\"Maintenanceplannergroup\":\"\",\"Maintenanceplannergroupname\":\"\",\"Maintenancerevision\":\"\",\"Maintordbasicstartdate\":\"/Date(1584921600000)/\",\"Maintordbasicenddate\":\"/Date(1584921600000)/\",\"Maintordmainworkcenter\":\"E-INSPCT\",\"Mainworkcentertext\":\"Inspection Work Center\",\"Maintordmainworkcenterplant\":\"X002\",\"Mainworkcenterplantname\":\"Engines\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1622419200000)/\",\"Maintenanceplant\":\"X002\",\"Maintenanceplantname\":\"Engines\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1584921600000)/\",\"Scheduledbasicstarttime\":\"PT24H00M00S\",\"Scheduledbasicenddate\":\"/Date(1584921600000)/\",\"Scheduledbasicendtime\":\"PT24H00M00S\",\"Creationdate\":\"/Date(1584835200000)/\",\"Createdbyuser\":\"NASINGH\",\"Lastchangedate\":\"/Date(1622505600000)/\",\"Lastchangedbyuser\":\"SHGUPTA\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000084300000002\",\"Operationworkcenterinternalid\":\"10000194\",\"Maintenanceorderinternalid\":\"OR000004000890\",\"UserStatus\":\"WIP\",\"Statusprofile\":\"ZMRO0001\",\"Statuscode\":\"E0001\",\"Plant\":\"X002\",\"Technicalobject\":\"000000000010000739\",\"Maintorderresppartnerfunction\":\"\",\"Maintorderconfirmation\":\"0000003584\",\"Maintoperationtechnicalobject\":\"\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracting entity keys using odata v2 key path",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4000890',Maintenanceorderoperation='0010')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4000890',Maintenanceorderoperation='0010')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"\",\"Mandt\":\"\",\"Maintenanceorder\":\"4000890\",\"Maintenanceorderdesc\":\"\",\"Maintenanceorderoperation\":\"0010\",\"Maintenanceprocessingphasedesc\":\"Completed for business\",\"Maintenanceprocessingphase\":\"6\",\"Plannedplant\":\"X002\",\"Maintenanceordertype\":\"MBLD\",\"Workcenter\":\"E-ASSY\",\"Maintenanceordertypename\":\"MRO Build Order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"10000739\",\"Technicalobjectdescription\":\"V2500 Engine\",\"Techobjisequiporfuncnlloc\":\"EAMS_EQUI\",\"Techobjisequiporfuncnllocdesc\":\"Equipment\",\"Operationdescription\":\"test\",\"Operationtechnicalobjectlabel\":\"\",\"Operationtechnicalobjectdesc\":\"\",\"Operationtechobjisequip\":\"\",\"Operationtechobjisequipdesc\":\"\",\"Operationmaintenancenotif\":\"\",\"Operationmaintnotificationtext\":\"\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Inspection Work Center\",\"Operationhaslongtext\":false,\"Plantname\":\"Engines\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"\",\"Operationquantity\":\"0.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"PM\",\"Maintprioritytypedesc\":\"PM priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"300001003\",\"Maintenancenotificationtext\":\"HPT - Visual Inspect\",\"Maintenanceplanningplant\":\"X002\",\"Maintenanceplanningplantname\":\"Engines\",\"Maintenanceplannergroup\":\"\",\"Maintenanceplannergroupname\":\"\",\"Maintenancerevision\":\"\",\"Maintordbasicstartdate\":\"/Date(1584921600000)/\",\"Maintordbasicenddate\":\"/Date(1584921600000)/\",\"Maintordmainworkcenter\":\"E-INSPCT\",\"Mainworkcentertext\":\"Inspection Work Center\",\"Maintordmainworkcenterplant\":\"X002\",\"Mainworkcenterplantname\":\"Engines\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1622419200000)/\",\"Maintenanceplant\":\"X002\",\"Maintenanceplantname\":\"Engines\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1584921600000)/\",\"Scheduledbasicstarttime\":\"PT24H00M00S\",\"Scheduledbasicenddate\":\"/Date(1584921600000)/\",\"Scheduledbasicendtime\":\"PT24H00M00S\",\"Creationdate\":\"/Date(1584835200000)/\",\"Createdbyuser\":\"NASINGH\",\"Lastchangedate\":\"/Date(1622505600000)/\",\"Lastchangedbyuser\":\"SHGUPTA\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000084300000002\",\"Operationworkcenterinternalid\":\"10000194\",\"Maintenanceorderinternalid\":\"OR000004000890\",\"UserStatus\":\"WIP\",\"Statusprofile\":\"ZMRO0001\",\"Statuscode\":\"E0001\",\"Plant\":\"X002\",\"Technicalobject\":\"000000000010000739\",\"Maintorderresppartnerfunction\":\"\",\"Maintorderconfirmation\":\"0000003584\",\"Maintoperationtechnicalobject\":\"\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracted entity content",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4001011',Maintenanceorderoperation='0010')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4001011',Maintenanceorderoperation='0010')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"\",\"Mandt\":\"\",\"Maintenanceorder\":\"4001011\",\"Maintenanceorderdesc\":\"\",\"Maintenanceorderoperation\":\"0010\",\"Maintenanceprocessingphasedesc\":\"Completed for business\",\"Maintenanceprocessingphase\":\"6\",\"Plannedplant\":\"X002\",\"Maintenanceordertype\":\"MBLD\",\"Workcenter\":\"E-ASSY\",\"Maintenanceordertypename\":\"MRO Build Order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"10000831\",\"Technicalobjectdescription\":\"qsqs1szxs\",\"Techobjisequiporfuncnlloc\":\"EAMS_EQUI\",\"Techobjisequiporfuncnllocdesc\":\"Equipment\",\"Operationdescription\":\"test\",\"Operationtechnicalobjectlabel\":\"\",\"Operationtechnicalobjectdesc\":\"\",\"Operationtechobjisequip\":\"\",\"Operationtechobjisequipdesc\":\"\",\"Operationmaintenancenotif\":\"\",\"Operationmaintnotificationtext\":\"\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Inspection Work Center\",\"Operationhaslongtext\":false,\"Plantname\":\"Engines\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"\",\"Operationquantity\":\"0.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"PM\",\"Maintprioritytypedesc\":\"PM priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"300001152\",\"Maintenancenotificationtext\":\"HPT Rotors\",\"Maintenanceplanningplant\":\"X002\",\"Maintenanceplanningplantname\":\"Engines\",\"Maintenanceplannergroup\":\"\",\"Maintenanceplannergroupname\":\"\",\"Maintenancerevision\":\"\",\"Maintordbasicstartdate\":\"/Date(1585008000000)/\",\"Maintordbasicenddate\":\"/Date(1585008000000)/\",\"Maintordmainworkcenter\":\"E-INSPCT\",\"Mainworkcentertext\":\"Inspection Work Center\",\"Maintordmainworkcenterplant\":\"X002\",\"Mainworkcenterplantname\":\"Engines\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1622505600000)/\",\"Maintenanceplant\":\"X002\",\"Maintenanceplantname\":\"Engines\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1585008000000)/\",\"Scheduledbasicstarttime\":\"PT24H00M00S\",\"Scheduledbasicenddate\":\"/Date(1585008000000)/\",\"Scheduledbasicendtime\":\"PT24H00M00S\",\"Creationdate\":\"/Date(1584921600000)/\",\"Createdbyuser\":\"VMISHRA\",\"Lastchangedate\":\"/Date(1622505600000)/\",\"Lastchangedbyuser\":\"SHGUPTA\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000096700000002\",\"Operationworkcenterinternalid\":\"10000194\",\"Maintenanceorderinternalid\":\"OR000004001011\",\"UserStatus\":\"WIP\",\"Statusprofile\":\"ZMRO0001\",\"Statuscode\":\"E0001\",\"Plant\":\"X002\",\"Technicalobject\":\"000000000010000831\",\"Maintorderresppartnerfunction\":\"\",\"Maintorderconfirmation\":\"0000004073\",\"Maintoperationtechnicalobject\":\"\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracting entity keys using odata v2 key path",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4001011',Maintenanceorderoperation='0010')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4001011',Maintenanceorderoperation='0010')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"\",\"Mandt\":\"\",\"Maintenanceorder\":\"4001011\",\"Maintenanceorderdesc\":\"\",\"Maintenanceorderoperation\":\"0010\",\"Maintenanceprocessingphasedesc\":\"Completed for business\",\"Maintenanceprocessingphase\":\"6\",\"Plannedplant\":\"X002\",\"Maintenanceordertype\":\"MBLD\",\"Workcenter\":\"E-ASSY\",\"Maintenanceordertypename\":\"MRO Build Order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"10000831\",\"Technicalobjectdescription\":\"qsqs1szxs\",\"Techobjisequiporfuncnlloc\":\"EAMS_EQUI\",\"Techobjisequiporfuncnllocdesc\":\"Equipment\",\"Operationdescription\":\"test\",\"Operationtechnicalobjectlabel\":\"\",\"Operationtechnicalobjectdesc\":\"\",\"Operationtechobjisequip\":\"\",\"Operationtechobjisequipdesc\":\"\",\"Operationmaintenancenotif\":\"\",\"Operationmaintnotificationtext\":\"\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Inspection Work Center\",\"Operationhaslongtext\":false,\"Plantname\":\"Engines\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"\",\"Operationquantity\":\"0.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"PM\",\"Maintprioritytypedesc\":\"PM priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"300001152\",\"Maintenancenotificationtext\":\"HPT Rotors\",\"Maintenanceplanningplant\":\"X002\",\"Maintenanceplanningplantname\":\"Engines\",\"Maintenanceplannergroup\":\"\",\"Maintenanceplannergroupname\":\"\",\"Maintenancerevision\":\"\",\"Maintordbasicstartdate\":\"/Date(1585008000000)/\",\"Maintordbasicenddate\":\"/Date(1585008000000)/\",\"Maintordmainworkcenter\":\"E-INSPCT\",\"Mainworkcentertext\":\"Inspection Work Center\",\"Maintordmainworkcenterplant\":\"X002\",\"Mainworkcenterplantname\":\"Engines\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1622505600000)/\",\"Maintenanceplant\":\"X002\",\"Maintenanceplantname\":\"Engines\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1585008000000)/\",\"Scheduledbasicstarttime\":\"PT24H00M00S\",\"Scheduledbasicenddate\":\"/Date(1585008000000)/\",\"Scheduledbasicendtime\":\"PT24H00M00S\",\"Creationdate\":\"/Date(1584921600000)/\",\"Createdbyuser\":\"VMISHRA\",\"Lastchangedate\":\"/Date(1622505600000)/\",\"Lastchangedbyuser\":\"SHGUPTA\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000096700000002\",\"Operationworkcenterinternalid\":\"10000194\",\"Maintenanceorderinternalid\":\"OR000004001011\",\"UserStatus\":\"WIP\",\"Statusprofile\":\"ZMRO0001\",\"Statuscode\":\"E0001\",\"Plant\":\"X002\",\"Technicalobject\":\"000000000010000831\",\"Maintorderresppartnerfunction\":\"\",\"Maintorderconfirmation\":\"0000004073\",\"Maintoperationtechnicalobject\":\"\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracted entity content",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005203',Maintenanceorderoperation='0020')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005203',Maintenanceorderoperation='0020')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"\",\"Mandt\":\"\",\"Maintenanceorder\":\"4005203\",\"Maintenanceorderdesc\":\"GTL18\",\"Maintenanceorderoperation\":\"0020\",\"Maintenanceprocessingphasedesc\":\"Released\",\"Maintenanceprocessingphase\":\"2\",\"Plannedplant\":\"X003\",\"Maintenanceordertype\":\"A001\",\"Workcenter\":\"AF\",\"Maintenanceordertypename\":\"Aircraft order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"XABC\",\"Technicalobjectdescription\":\"B787 Dreamliner\",\"Techobjisequiporfuncnlloc\":\"EAMS_FL\",\"Techobjisequiporfuncnllocdesc\":\"Functional Location\",\"Operationdescription\":\"op1\",\"Operationtechnicalobjectlabel\":\"\",\"Operationtechnicalobjectdesc\":\"\",\"Operationtechobjisequip\":\"\",\"Operationtechobjisequipdesc\":\"\",\"Operationmaintenancenotif\":\"\",\"Operationmaintnotificationtext\":\"\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Airframe - Airframe\",\"Operationhaslongtext\":false,\"Plantname\":\"Aircraft\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"H\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"H\",\"Operationquantity\":\"1.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"DF\",\"Maintprioritytypedesc\":\"AC Defect priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"\",\"Maintenancenotificationtext\":\"\",\"Maintenanceplanningplant\":\"X003\",\"Maintenanceplanningplantname\":\"Aircraft\",\"Maintenanceplannergroup\":\"A1\",\"Maintenanceplannergroupname\":\"A/C Maintenance\",\"Maintenancerevision\":\"00000114\",\"Maintordbasicstartdate\":\"/Date(1615852800000)/\",\"Maintordbasicenddate\":\"/Date(1617840000000)/\",\"Maintordmainworkcenter\":\"AF\",\"Mainworkcentertext\":\"Airframe - Airframe\",\"Maintordmainworkcenterplant\":\"X003\",\"Mainworkcenterplantname\":\"Aircraft\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1615852800000)/\",\"Maintenanceplant\":\"X003\",\"Maintenanceplantname\":\"Aircraft\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1622678400000)/\",\"Scheduledbasicstarttime\":\"PT07H00M00S\",\"Scheduledbasicenddate\":\"/Date(1622678400000)/\",\"Scheduledbasicendtime\":\"PT09H15M00S\",\"Creationdate\":\"/Date(1621814400000)/\",\"Createdbyuser\":\"SHILPA_M\",\"Lastchangedate\":\"/Date(1623369600000)/\",\"Lastchangedbyuser\":\"SHILPA_M\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000504400000002\",\"Operationworkcenterinternalid\":\"10000208\",\"Maintenanceorderinternalid\":\"OR000004005203\",\"UserStatus\":\"WIP\",\"Statusprofile\":\"ZMRO0001\",\"Statuscode\":\"E0001\",\"Plant\":\"X003\",\"Technicalobject\":\"XABC\",\"Maintorderresppartnerfunction\":\"VW\",\"Maintorderconfirmation\":\"0000019514\",\"Maintoperationtechnicalobject\":\"\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracting entity keys using odata v2 key path",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005203',Maintenanceorderoperation='0020')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005203',Maintenanceorderoperation='0020')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"\",\"Mandt\":\"\",\"Maintenanceorder\":\"4005203\",\"Maintenanceorderdesc\":\"GTL18\",\"Maintenanceorderoperation\":\"0020\",\"Maintenanceprocessingphasedesc\":\"Released\",\"Maintenanceprocessingphase\":\"2\",\"Plannedplant\":\"X003\",\"Maintenanceordertype\":\"A001\",\"Workcenter\":\"AF\",\"Maintenanceordertypename\":\"Aircraft order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"XABC\",\"Technicalobjectdescription\":\"B787 Dreamliner\",\"Techobjisequiporfuncnlloc\":\"EAMS_FL\",\"Techobjisequiporfuncnllocdesc\":\"Functional Location\",\"Operationdescription\":\"op1\",\"Operationtechnicalobjectlabel\":\"\",\"Operationtechnicalobjectdesc\":\"\",\"Operationtechobjisequip\":\"\",\"Operationtechobjisequipdesc\":\"\",\"Operationmaintenancenotif\":\"\",\"Operationmaintnotificationtext\":\"\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Airframe - Airframe\",\"Operationhaslongtext\":false,\"Plantname\":\"Aircraft\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"H\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"H\",\"Operationquantity\":\"1.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"DF\",\"Maintprioritytypedesc\":\"AC Defect priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"\",\"Maintenancenotificationtext\":\"\",\"Maintenanceplanningplant\":\"X003\",\"Maintenanceplanningplantname\":\"Aircraft\",\"Maintenanceplannergroup\":\"A1\",\"Maintenanceplannergroupname\":\"A/C Maintenance\",\"Maintenancerevision\":\"00000114\",\"Maintordbasicstartdate\":\"/Date(1615852800000)/\",\"Maintordbasicenddate\":\"/Date(1617840000000)/\",\"Maintordmainworkcenter\":\"AF\",\"Mainworkcentertext\":\"Airframe - Airframe\",\"Maintordmainworkcenterplant\":\"X003\",\"Mainworkcenterplantname\":\"Aircraft\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1615852800000)/\",\"Maintenanceplant\":\"X003\",\"Maintenanceplantname\":\"Aircraft\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1622678400000)/\",\"Scheduledbasicstarttime\":\"PT07H00M00S\",\"Scheduledbasicenddate\":\"/Date(1622678400000)/\",\"Scheduledbasicendtime\":\"PT09H15M00S\",\"Creationdate\":\"/Date(1621814400000)/\",\"Createdbyuser\":\"SHILPA_M\",\"Lastchangedate\":\"/Date(1623369600000)/\",\"Lastchangedbyuser\":\"SHILPA_M\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000504400000002\",\"Operationworkcenterinternalid\":\"10000208\",\"Maintenanceorderinternalid\":\"OR000004005203\",\"UserStatus\":\"WIP\",\"Statusprofile\":\"ZMRO0001\",\"Statuscode\":\"E0001\",\"Plant\":\"X003\",\"Technicalobject\":\"XABC\",\"Maintorderresppartnerfunction\":\"VW\",\"Maintorderconfirmation\":\"0000019514\",\"Maintoperationtechnicalobject\":\"\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracted entity content",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0020')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0020')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"\",\"Mandt\":\"\",\"Maintenanceorder\":\"4005343\",\"Maintenanceorderdesc\":\"test sub order\",\"Maintenanceorderoperation\":\"0020\",\"Maintenanceprocessingphasedesc\":\"Outstanding\",\"Maintenanceprocessingphase\":\"0\",\"Plannedplant\":\"X003\",\"Maintenanceordertype\":\"A001\",\"Workcenter\":\"AF\",\"Maintenanceordertypename\":\"Aircraft order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"XABC\",\"Technicalobjectdescription\":\"B787 Dreamliner\",\"Techobjisequiporfuncnlloc\":\"EAMS_FL\",\"Techobjisequiporfuncnllocdesc\":\"Functional Location\",\"Operationdescription\":\"operation 0020\",\"Operationtechnicalobjectlabel\":\"\",\"Operationtechnicalobjectdesc\":\"\",\"Operationtechobjisequip\":\"\",\"Operationtechobjisequipdesc\":\"\",\"Operationmaintenancenotif\":\"\",\"Operationmaintnotificationtext\":\"\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Airframe - Airframe\",\"Operationhaslongtext\":false,\"Plantname\":\"Aircraft\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"H\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"H\",\"Operationquantity\":\"1.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"DF\",\"Maintprioritytypedesc\":\"AC Defect priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"\",\"Maintenancenotificationtext\":\"\",\"Maintenanceplanningplant\":\"X003\",\"Maintenanceplanningplantname\":\"Aircraft\",\"Maintenanceplannergroup\":\"A1\",\"Maintenanceplannergroupname\":\"A/C Maintenance\",\"Maintenancerevision\":\"\",\"Maintordbasicstartdate\":\"/Date(1615852800000)/\",\"Maintordbasicenddate\":\"/Date(1617840000000)/\",\"Maintordmainworkcenter\":\"AF\",\"Mainworkcentertext\":\"Airframe - Airframe\",\"Maintordmainworkcenterplant\":\"X003\",\"Mainworkcenterplantname\":\"Aircraft\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1615852800000)/\",\"Maintenanceplant\":\"X003\",\"Maintenanceplantname\":\"Aircraft\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1622678400000)/\",\"Scheduledbasicstarttime\":\"PT07H00M00S\",\"Scheduledbasicenddate\":\"/Date(1622678400000)/\",\"Scheduledbasicendtime\":\"PT07H00M00S\",\"Creationdate\":\"/Date(1622678400000)/\",\"Createdbyuser\":\"SHILPA_M\",\"Lastchangedate\":\"/Date(1622678400000)/\",\"Lastchangedbyuser\":\"SHILPA_M\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000518400000004\",\"Operationworkcenterinternalid\":\"10000208\",\"Maintenanceorderinternalid\":\"OR000004005343\",\"UserStatus\":\"WIP\",\"Statusprofile\":\"ZMRO0001\",\"Statuscode\":\"E0001\",\"Plant\":\"X003\",\"Technicalobject\":\"XABC\",\"Maintorderresppartnerfunction\":\"VW\",\"Maintorderconfirmation\":\"0000019518\",\"Maintoperationtechnicalobject\":\"\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracting entity keys using odata v2 key path",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0020')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0020')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"\",\"Mandt\":\"\",\"Maintenanceorder\":\"4005343\",\"Maintenanceorderdesc\":\"test sub order\",\"Maintenanceorderoperation\":\"0020\",\"Maintenanceprocessingphasedesc\":\"Outstanding\",\"Maintenanceprocessingphase\":\"0\",\"Plannedplant\":\"X003\",\"Maintenanceordertype\":\"A001\",\"Workcenter\":\"AF\",\"Maintenanceordertypename\":\"Aircraft order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"XABC\",\"Technicalobjectdescription\":\"B787 Dreamliner\",\"Techobjisequiporfuncnlloc\":\"EAMS_FL\",\"Techobjisequiporfuncnllocdesc\":\"Functional Location\",\"Operationdescription\":\"operation 0020\",\"Operationtechnicalobjectlabel\":\"\",\"Operationtechnicalobjectdesc\":\"\",\"Operationtechobjisequip\":\"\",\"Operationtechobjisequipdesc\":\"\",\"Operationmaintenancenotif\":\"\",\"Operationmaintnotificationtext\":\"\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Airframe - Airframe\",\"Operationhaslongtext\":false,\"Plantname\":\"Aircraft\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"H\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"H\",\"Operationquantity\":\"1.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"DF\",\"Maintprioritytypedesc\":\"AC Defect priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"\",\"Maintenancenotificationtext\":\"\",\"Maintenanceplanningplant\":\"X003\",\"Maintenanceplanningplantname\":\"Aircraft\",\"Maintenanceplannergroup\":\"A1\",\"Maintenanceplannergroupname\":\"A/C Maintenance\",\"Maintenancerevision\":\"\",\"Maintordbasicstartdate\":\"/Date(1615852800000)/\",\"Maintordbasicenddate\":\"/Date(1617840000000)/\",\"Maintordmainworkcenter\":\"AF\",\"Mainworkcentertext\":\"Airframe - Airframe\",\"Maintordmainworkcenterplant\":\"X003\",\"Mainworkcenterplantname\":\"Aircraft\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1615852800000)/\",\"Maintenanceplant\":\"X003\",\"Maintenanceplantname\":\"Aircraft\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1622678400000)/\",\"Scheduledbasicstarttime\":\"PT07H00M00S\",\"Scheduledbasicenddate\":\"/Date(1622678400000)/\",\"Scheduledbasicendtime\":\"PT07H00M00S\",\"Creationdate\":\"/Date(1622678400000)/\",\"Createdbyuser\":\"SHILPA_M\",\"Lastchangedate\":\"/Date(1622678400000)/\",\"Lastchangedbyuser\":\"SHILPA_M\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000518400000004\",\"Operationworkcenterinternalid\":\"10000208\",\"Maintenanceorderinternalid\":\"OR000004005343\",\"UserStatus\":\"WIP\",\"Statusprofile\":\"ZMRO0001\",\"Statuscode\":\"E0001\",\"Plant\":\"X003\",\"Technicalobject\":\"XABC\",\"Maintorderresppartnerfunction\":\"VW\",\"Maintorderconfirmation\":\"0000019518\",\"Maintoperationtechnicalobject\":\"\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracted entity content",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0010')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0010')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"0020\",\"Mandt\":\"\",\"Maintenanceorder\":\"4005343\",\"Maintenanceorderdesc\":\"test sub order\",\"Maintenanceorderoperation\":\"0010\",\"Maintenanceprocessingphasedesc\":\"Outstanding\",\"Maintenanceprocessingphase\":\"0\",\"Plannedplant\":\"X003\",\"Maintenanceordertype\":\"A001\",\"Workcenter\":\"AF\",\"Maintenanceordertypename\":\"Aircraft order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"XABC\",\"Technicalobjectdescription\":\"B787 Dreamliner\",\"Techobjisequiporfuncnlloc\":\"EAMS_FL\",\"Techobjisequiporfuncnllocdesc\":\"Functional Location\",\"Operationdescription\":\"operation 5 with suboperation\",\"Operationtechnicalobjectlabel\":\"\",\"Operationtechnicalobjectdesc\":\"\",\"Operationtechobjisequip\":\"\",\"Operationtechobjisequipdesc\":\"\",\"Operationmaintenancenotif\":\"\",\"Operationmaintnotificationtext\":\"\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Airframe - Airframe\",\"Operationhaslongtext\":false,\"Plantname\":\"Aircraft\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"H\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"H\",\"Operationquantity\":\"1.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"DF\",\"Maintprioritytypedesc\":\"AC Defect priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"\",\"Maintenancenotificationtext\":\"\",\"Maintenanceplanningplant\":\"X003\",\"Maintenanceplanningplantname\":\"Aircraft\",\"Maintenanceplannergroup\":\"A1\",\"Maintenanceplannergroupname\":\"A/C Maintenance\",\"Maintenancerevision\":\"\",\"Maintordbasicstartdate\":\"/Date(1615852800000)/\",\"Maintordbasicenddate\":\"/Date(1617840000000)/\",\"Maintordmainworkcenter\":\"AF\",\"Mainworkcentertext\":\"Airframe - Airframe\",\"Maintordmainworkcenterplant\":\"X003\",\"Mainworkcenterplantname\":\"Aircraft\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1615852800000)/\",\"Maintenanceplant\":\"X003\",\"Maintenanceplantname\":\"Aircraft\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1622678400000)/\",\"Scheduledbasicstarttime\":\"PT07H00M00S\",\"Scheduledbasicenddate\":\"/Date(1622678400000)/\",\"Scheduledbasicendtime\":\"PT07H00M00S\",\"Creationdate\":\"/Date(1622678400000)/\",\"Createdbyuser\":\"SHILPA_M\",\"Lastchangedate\":\"/Date(1622678400000)/\",\"Lastchangedbyuser\":\"SHILPA_M\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000518400000003\",\"Operationworkcenterinternalid\":\"10000208\",\"Maintenanceorderinternalid\":\"OR000004005343\",\"UserStatus\":\"WIP\",\"Statusprofile\":\"ZMRO0001\",\"Statuscode\":\"E0001\",\"Plant\":\"X003\",\"Technicalobject\":\"XABC\",\"Maintorderresppartnerfunction\":\"VW\",\"Maintorderconfirmation\":\"0000019517\",\"Maintoperationtechnicalobject\":\"\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracting entity keys using odata v2 key path",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0010')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0010')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"0020\",\"Mandt\":\"\",\"Maintenanceorder\":\"4005343\",\"Maintenanceorderdesc\":\"test sub order\",\"Maintenanceorderoperation\":\"0010\",\"Maintenanceprocessingphasedesc\":\"Outstanding\",\"Maintenanceprocessingphase\":\"0\",\"Plannedplant\":\"X003\",\"Maintenanceordertype\":\"A001\",\"Workcenter\":\"AF\",\"Maintenanceordertypename\":\"Aircraft order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"XABC\",\"Technicalobjectdescription\":\"B787 Dreamliner\",\"Techobjisequiporfuncnlloc\":\"EAMS_FL\",\"Techobjisequiporfuncnllocdesc\":\"Functional Location\",\"Operationdescription\":\"operation 5 with suboperation\",\"Operationtechnicalobjectlabel\":\"\",\"Operationtechnicalobjectdesc\":\"\",\"Operationtechobjisequip\":\"\",\"Operationtechobjisequipdesc\":\"\",\"Operationmaintenancenotif\":\"\",\"Operationmaintnotificationtext\":\"\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Airframe - Airframe\",\"Operationhaslongtext\":false,\"Plantname\":\"Aircraft\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"H\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"H\",\"Operationquantity\":\"1.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"DF\",\"Maintprioritytypedesc\":\"AC Defect priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"\",\"Maintenancenotificationtext\":\"\",\"Maintenanceplanningplant\":\"X003\",\"Maintenanceplanningplantname\":\"Aircraft\",\"Maintenanceplannergroup\":\"A1\",\"Maintenanceplannergroupname\":\"A/C Maintenance\",\"Maintenancerevision\":\"\",\"Maintordbasicstartdate\":\"/Date(1615852800000)/\",\"Maintordbasicenddate\":\"/Date(1617840000000)/\",\"Maintordmainworkcenter\":\"AF\",\"Mainworkcentertext\":\"Airframe - Airframe\",\"Maintordmainworkcenterplant\":\"X003\",\"Mainworkcenterplantname\":\"Aircraft\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1615852800000)/\",\"Maintenanceplant\":\"X003\",\"Maintenanceplantname\":\"Aircraft\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1622678400000)/\",\"Scheduledbasicstarttime\":\"PT07H00M00S\",\"Scheduledbasicenddate\":\"/Date(1622678400000)/\",\"Scheduledbasicendtime\":\"PT07H00M00S\",\"Creationdate\":\"/Date(1622678400000)/\",\"Createdbyuser\":\"SHILPA_M\",\"Lastchangedate\":\"/Date(1622678400000)/\",\"Lastchangedbyuser\":\"SHILPA_M\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000518400000003\",\"Operationworkcenterinternalid\":\"10000208\",\"Maintenanceorderinternalid\":\"OR000004005343\",\"UserStatus\":\"WIP\",\"Statusprofile\":\"ZMRO0001\",\"Statuscode\":\"E0001\",\"Plant\":\"X003\",\"Technicalobject\":\"XABC\",\"Maintorderresppartnerfunction\":\"VW\",\"Maintorderconfirmation\":\"0000019517\",\"Maintoperationtechnicalobject\":\"\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracted entity content",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005453',Maintenanceorderoperation='0020')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005453',Maintenanceorderoperation='0020')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"\",\"Mandt\":\"\",\"Maintenanceorder\":\"4005453\",\"Maintenanceorderdesc\":\"   actual vs planned cost\",\"Maintenanceorderoperation\":\"0020\",\"Maintenanceprocessingphasedesc\":\"Outstanding\",\"Maintenanceprocessingphase\":\"0\",\"Plannedplant\":\"X003\",\"Maintenanceordertype\":\"A001\",\"Workcenter\":\"AF\",\"Maintenanceordertypename\":\"Aircraft order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"XABC\",\"Technicalobjectdescription\":\"B787 Dreamliner\",\"Techobjisequiporfuncnlloc\":\"EAMS_FL\",\"Techobjisequiporfuncnllocdesc\":\"Functional Location\",\"Operationdescription\":\"   actual vs planned cost\",\"Operationtechnicalobjectlabel\":\"XABC\",\"Operationtechnicalobjectdesc\":\"B787 Dreamliner\",\"Operationtechobjisequip\":\"EAMS_FL\",\"Operationtechobjisequipdesc\":\"Functional Location\",\"Operationmaintenancenotif\":\"300003856\",\"Operationmaintnotificationtext\":\"   actual vs planned cost\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Airframe - Airframe\",\"Operationhaslongtext\":false,\"Plantname\":\"Aircraft\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"H\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"H\",\"Operationquantity\":\"1.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"DF\",\"Maintprioritytypedesc\":\"AC Defect priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"300003856\",\"Maintenancenotificationtext\":\"   actual vs planned cost\",\"Maintenanceplanningplant\":\"X003\",\"Maintenanceplanningplantname\":\"Aircraft\",\"Maintenanceplannergroup\":\"A1\",\"Maintenanceplannergroupname\":\"A/C Maintenance\",\"Maintenancerevision\":\"\",\"Maintordbasicstartdate\":\"/Date(1623196800000)/\",\"Maintordbasicenddate\":\"/Date(1623196800000)/\",\"Maintordmainworkcenter\":\"AF\",\"Mainworkcentertext\":\"Airframe - Airframe\",\"Maintordmainworkcenterplant\":\"X003\",\"Mainworkcenterplantname\":\"Aircraft\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1623196800000)/\",\"Maintenanceplant\":\"X003\",\"Maintenanceplantname\":\"Aircraft\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1623196800000)/\",\"Scheduledbasicstarttime\":\"PT07H00M00S\",\"Scheduledbasicenddate\":\"/Date(1623196800000)/\",\"Scheduledbasicendtime\":\"PT07H00M00S\",\"Creationdate\":\"/Date(1623196800000)/\",\"Createdbyuser\":\"ZSIDDIQUI\",\"Lastchangedate\":null,\"Lastchangedbyuser\":\"\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000529400000002\",\"Operationworkcenterinternalid\":\"10000208\",\"Maintenanceorderinternalid\":\"OR000004005453\",\"UserStatus\":\"WIP\",\"Statusprofile\":\"ZMRO0001\",\"Statuscode\":\"E0001\",\"Plant\":\"X003\",\"Technicalobject\":\"XABC\",\"Maintorderresppartnerfunction\":\"VW\",\"Maintorderconfirmation\":\"0000019883\",\"Maintoperationtechnicalobject\":\"XABC\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "extracting entity keys using odata v2 key path",
+                        "reference": null,
+                        "data": "{ \"d\": {\"__metadata\":{\"id\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005453',Maintenanceorderoperation='0020')\",\"uri\":\"http://40.70.43.60:8000/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005453',Maintenanceorderoperation='0020')\",\"type\":\"ISAMMCCO.MOPERASSIGN_SOL_SRV.MaintenanceOrdOperation\"},\"Maintenanceordersuboperation\":\"\",\"Mandt\":\"\",\"Maintenanceorder\":\"4005453\",\"Maintenanceorderdesc\":\"   actual vs planned cost\",\"Maintenanceorderoperation\":\"0020\",\"Maintenanceprocessingphasedesc\":\"Outstanding\",\"Maintenanceprocessingphase\":\"0\",\"Plannedplant\":\"X003\",\"Maintenanceordertype\":\"A001\",\"Workcenter\":\"AF\",\"Maintenanceordertypename\":\"Aircraft order\",\"Operationpersonresponsible\":\"00000000\",\"Email\":\"\",\"Technicalobjectlabel\":\"XABC\",\"Technicalobjectdescription\":\"B787 Dreamliner\",\"Techobjisequiporfuncnlloc\":\"EAMS_FL\",\"Techobjisequiporfuncnllocdesc\":\"Functional Location\",\"Operationdescription\":\"   actual vs planned cost\",\"Operationtechnicalobjectlabel\":\"XABC\",\"Operationtechnicalobjectdesc\":\"B787 Dreamliner\",\"Operationtechobjisequip\":\"EAMS_FL\",\"Operationtechobjisequipdesc\":\"Functional Location\",\"Operationmaintenancenotif\":\"300003856\",\"Operationmaintnotificationtext\":\"   actual vs planned cost\",\"Operationcontrolkey\":\"PM01\",\"Operationcontrolprofilename\":\"Plant maintenance - internal\",\"Workcentertext\":\"Airframe - Airframe\",\"Operationhaslongtext\":false,\"Plantname\":\"Aircraft\",\"Personnel\":\"00000000\",\"Operationpersonrespname\":\"\",\"Operationsystemcondition\":\"\",\"Operationsystemconditiontext\":\"\",\"Operationplannedwork\":\"0.0\",\"Operationplannedworkunit\":\"H\",\"Operationduration\":\"0.0\",\"Operationdurationunit\":\"H\",\"Operationquantity\":\"1.000\",\"Operationquantityunit\":\"\",\"Opplnddeliverydurationindays\":\"0 \",\"Forecastedworkqty\":\"0.0 \",\"Actualworkquantity\":\"0.000 \",\"Maintprioritytype\":\"DF\",\"Maintprioritytypedesc\":\"AC Defect priorities\",\"Maintpriority\":\"\",\"Maintprioritydesc\":\"\",\"Maintenancenotification\":\"300003856\",\"Maintenancenotificationtext\":\"   actual vs planned cost\",\"Maintenanceplanningplant\":\"X003\",\"Maintenanceplanningplantname\":\"Aircraft\",\"Maintenanceplannergroup\":\"A1\",\"Maintenanceplannergroupname\":\"A/C Maintenance\",\"Maintenancerevision\":\"\",\"Maintordbasicstartdate\":\"/Date(1623196800000)/\",\"Maintordbasicenddate\":\"/Date(1623196800000)/\",\"Maintordmainworkcenter\":\"AF\",\"Mainworkcentertext\":\"Airframe - Airframe\",\"Maintordmainworkcenterplant\":\"X003\",\"Mainworkcenterplantname\":\"Aircraft\",\"Maintordpersonresponsible\":\"\",\"Personresponsiblename\":\"\",\"Maintorderreferencedate\":\"/Date(1623196800000)/\",\"Maintenanceplant\":\"X003\",\"Maintenanceplantname\":\"Aircraft\",\"Plantsection\":\"\",\"Scheduledbasicstartdate\":\"/Date(1623196800000)/\",\"Scheduledbasicstarttime\":\"PT07H00M00S\",\"Scheduledbasicenddate\":\"/Date(1623196800000)/\",\"Scheduledbasicendtime\":\"PT07H00M00S\",\"Creationdate\":\"/Date(1623196800000)/\",\"Createdbyuser\":\"ZSIDDIQUI\",\"Lastchangedate\":null,\"Lastchangedbyuser\":\"\",\"Lastchangedbyusername\":\"\",\"Isfinallyconfirmed\":false,\"Isoverdue\":false,\"Maintorderoperationlongtext\":\"\",\"Maintordcnctntdactvsyststs\":\"\",\"Maintorderoperationinternalid\":\"OV100000529400000002\",\"Operationworkcenterinternalid\":\"10000208\",\"Maintenanceorderinternalid\":\"OR000004005453\",\"UserStatus\":\"WIP\",\"Statusprofile\":\"ZMRO0001\",\"Statuscode\":\"E0001\",\"Plant\":\"X003\",\"Technicalobject\":\"XABC\",\"Maintorderresppartnerfunction\":\"VW\",\"Maintorderconfirmation\":\"0000019883\",\"Maintoperationtechnicalobject\":\"XABC\"}}"
+                    },
+                    {
+                        "type": "info",
+                        "note": "Entities truncated due to size limit",
+                        "reference": null,
+                        "data": null
+                    }
+                ]
+            }
+        ],
+        "status": "success"
+    },
+    {
+        "name": "1800 - CardInstanceLoadAssemblyStep",
+        "duration": 0,
+        "status": "success"
+    },
+    {
+        "name": "2000 - CardInstanceFilterAssemblyStep",
+        "duration": 0,
+        "status": "success"
+    },
+    {
+        "name": "3000 - CardInstanceHandlingAssemblyStep",
+        "duration": 4,
+        "operations": [
+            {
+                "name": "CARD RESOURCE IDENTIFIER CACHE LOOKUP",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "d1fe1567-a43c-4074-9c67-99ce522ea0e0",
+                "parentId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "status": "success",
+                "description": "resource identifier cache lookup",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "resource identifier is not cacheable",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0020')"
+                    }
+                ]
+            },
+            {
+                "name": "CARD RESOURCE IDENTIFIER CACHE LOOKUP",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "91faea49-7a6f-4fab-9bed-c496d19f784e",
+                "parentId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "status": "success",
+                "description": "resource identifier cache lookup",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "resource identifier is not cacheable",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005203',Maintenanceorderoperation='0020')"
+                    }
+                ]
+            },
+            {
+                "name": "CARD RESOURCE IDENTIFIER CACHE LOOKUP",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "8799b499-07ba-4282-bb8c-93d0bd8f1239",
+                "parentId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "status": "success",
+                "description": "resource identifier cache lookup",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "resource identifier is not cacheable",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0010')"
+                    }
+                ]
+            },
+            {
+                "name": "CARD RESOURCE IDENTIFIER CACHE LOOKUP",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "bd82641e-35bc-42fb-b24b-853336948881",
+                "parentId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "status": "success",
+                "description": "resource identifier cache lookup",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "resource identifier is not cacheable",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4000890',Maintenanceorderoperation='0010')"
+                    }
+                ]
+            },
+            {
+                "name": "CARD RESOURCE IDENTIFIER CACHE LOOKUP",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "ff34651c-599b-4fbf-a6f4-e627ec90fc80",
+                "parentId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "status": "success",
+                "description": "resource identifier cache lookup",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "resource identifier is not cacheable",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4003625',Maintenanceorderoperation='0020')"
+                    }
+                ]
+            },
+            {
+                "name": "DOWNLOAD CARD INSTANCE RESOURCES",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "91faea49-7a6f-4fab-9bed-c496d19f784e",
+                "status": "success",
+                "description": "download card instance resources",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Download NON OData resource",
+                        "reference": null,
+                        "data": null
+                    },
+                    {
+                        "type": "info",
+                        "note": "Resource identifier status OK",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005203',Maintenanceorderoperation='0020')"
+                    }
+                ]
+            },
+            {
+                "name": "DOWNLOAD CARD INSTANCE RESOURCES",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "d1fe1567-a43c-4074-9c67-99ce522ea0e0",
+                "status": "success",
+                "description": "download card instance resources",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Download NON OData resource",
+                        "reference": null,
+                        "data": null
+                    },
+                    {
+                        "type": "info",
+                        "note": "Resource identifier status OK",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0020')"
+                    }
+                ]
+            },
+            {
+                "name": "DOWNLOAD CARD INSTANCE RESOURCES",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "8799b499-07ba-4282-bb8c-93d0bd8f1239",
+                "status": "success",
+                "description": "download card instance resources",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Download NON OData resource",
+                        "reference": null,
+                        "data": null
+                    },
+                    {
+                        "type": "info",
+                        "note": "Resource identifier status OK",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0010')"
+                    }
+                ]
+            },
+            {
+                "name": "DOWNLOAD CARD INSTANCE RESOURCES",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "ff34651c-599b-4fbf-a6f4-e627ec90fc80",
+                "status": "success",
+                "description": "download card instance resources",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Download NON OData resource",
+                        "reference": null,
+                        "data": null
+                    },
+                    {
+                        "type": "info",
+                        "note": "Resource identifier status OK",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4003625',Maintenanceorderoperation='0020')"
+                    }
+                ]
+            },
+            {
+                "name": "DOWNLOAD CARD INSTANCE RESOURCES",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "bd82641e-35bc-42fb-b24b-853336948881",
+                "status": "success",
+                "description": "download card instance resources",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Download NON OData resource",
+                        "reference": null,
+                        "data": null
+                    },
+                    {
+                        "type": "info",
+                        "note": "Resource identifier status OK",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4000890',Maintenanceorderoperation='0010')"
+                    }
+                ]
+            },
+            {
+                "name": "CARD RESOURCE IDENTIFIER CACHE LOOKUP",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "8e3e4800-86ad-4a02-a6c3-f40a5643c23b",
+                "parentId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "status": "success",
+                "description": "resource identifier cache lookup",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "resource identifier is not cacheable",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4004495',Maintenanceorderoperation='0020')"
+                    }
+                ]
+            },
+            {
+                "name": "DOWNLOAD CARD INSTANCE RESOURCES",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "8e3e4800-86ad-4a02-a6c3-f40a5643c23b",
+                "status": "success",
+                "description": "download card instance resources",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Download NON OData resource",
+                        "reference": null,
+                        "data": null
+                    },
+                    {
+                        "type": "info",
+                        "note": "Resource identifier status OK",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4004495',Maintenanceorderoperation='0020')"
+                    }
+                ]
+            },
+            {
+                "name": "CARD RESOURCE IDENTIFIER CACHE LOOKUP",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "de13f3c9-d770-4595-b6e3-5b5b1c074da6",
+                "parentId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "status": "success",
+                "description": "resource identifier cache lookup",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "resource identifier is not cacheable",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0020')"
+                    }
+                ]
+            },
+            {
+                "name": "CARD RESOURCE IDENTIFIER CACHE LOOKUP",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "d6dc0104-3f5c-4772-9fd2-8c6b45768340",
+                "parentId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "status": "success",
+                "description": "resource identifier cache lookup",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "resource identifier is not cacheable",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005453',Maintenanceorderoperation='0020')"
+                    }
+                ]
+            },
+            {
+                "name": "DOWNLOAD CARD INSTANCE RESOURCES",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "de13f3c9-d770-4595-b6e3-5b5b1c074da6",
+                "status": "success",
+                "description": "download card instance resources",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Download NON OData resource",
+                        "reference": null,
+                        "data": null
+                    },
+                    {
+                        "type": "info",
+                        "note": "Resource identifier status OK",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0020')"
+                    }
+                ]
+            },
+            {
+                "name": "CARD RESOURCE IDENTIFIER CACHE LOOKUP",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "faaae237-3c68-4a30-a25a-eaa4cada2e04",
+                "parentId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "status": "success",
+                "description": "resource identifier cache lookup",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "resource identifier is not cacheable",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4001011',Maintenanceorderoperation='0010')"
+                    }
+                ]
+            },
+            {
+                "name": "DOWNLOAD CARD INSTANCE RESOURCES",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "faaae237-3c68-4a30-a25a-eaa4cada2e04",
+                "status": "success",
+                "description": "download card instance resources",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Download NON OData resource",
+                        "reference": null,
+                        "data": null
+                    },
+                    {
+                        "type": "info",
+                        "note": "Resource identifier status OK",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4001011',Maintenanceorderoperation='0010')"
+                    }
+                ]
+            },
+            {
+                "name": "DOWNLOAD CARD INSTANCE RESOURCES",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "d6dc0104-3f5c-4772-9fd2-8c6b45768340",
+                "status": "success",
+                "description": "download card instance resources",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Download NON OData resource",
+                        "reference": null,
+                        "data": null
+                    },
+                    {
+                        "type": "info",
+                        "note": "Resource identifier status OK",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005453',Maintenanceorderoperation='0020')"
+                    }
+                ]
+            },
+            {
+                "name": "CARD RESOURCE IDENTIFIER CACHE LOOKUP",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "93778489-fd77-4462-bbc2-75c134401a72",
+                "parentId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "status": "success",
+                "description": "resource identifier cache lookup",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "resource identifier is not cacheable",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0030')"
+                    }
+                ]
+            },
+            {
+                "name": "DOWNLOAD CARD INSTANCE RESOURCES",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "93778489-fd77-4462-bbc2-75c134401a72",
+                "status": "success",
+                "description": "download card instance resources",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Download NON OData resource",
+                        "reference": null,
+                        "data": null
+                    },
+                    {
+                        "type": "info",
+                        "note": "Resource identifier status OK",
+                        "reference": null,
+                        "data": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0030')"
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "d1fe1567-a43c-4074-9c67-99ce522ea0e0",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0020"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4005249"
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "8e3e4800-86ad-4a02-a6c3-f40a5643c23b",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0020"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4004495"
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "8799b499-07ba-4282-bb8c-93d0bd8f1239",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0010"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4005343"
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "91faea49-7a6f-4fab-9bed-c496d19f784e",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0020"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4005203"
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "faaae237-3c68-4a30-a25a-eaa4cada2e04",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0010"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4001011"
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "de13f3c9-d770-4595-b6e3-5b5b1c074da6",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0020"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4005343"
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "93778489-fd77-4462-bbc2-75c134401a72",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0030"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4005249"
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "bd82641e-35bc-42fb-b24b-853336948881",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0010"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4000890"
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "d6dc0104-3f5c-4772-9fd2-8c6b45768340",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0020"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4005453"
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "ff34651c-599b-4fbf-a6f4-e627ec90fc80",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0020"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4003625"
+                    }
+                ]
+            },
+            {
+                "name": "Card Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "93778489-fd77-4462-bbc2-75c134401a72",
+                "status": "success",
+                "description": "create the card instance manifest",
+                "values": [
+                    {
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0030')",
+                        "afterParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0030')"
+                    },
+                    {
+                        "type": "uri",
+                        "name": "Resource identifier path",
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0030')",
+                        "afterParameterReplacement": "/n1dmob/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0030')"
+                    },
+                    {
+                        "type": "set of image mappings",
+                        "name": "Resource identifier image mappings",
+                        "beforeParameterReplacement": "[]",
+                        "afterParameterReplacement": "[]"
+                    }
+                ],
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Adding card resource identifiers",
+                        "reference": null,
+                        "data": null
+                    }
+                ]
+            },
+            {
+                "name": "Card Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "d1fe1567-a43c-4074-9c67-99ce522ea0e0",
+                "status": "success",
+                "description": "create the card instance manifest",
+                "values": [
+                    {
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0020')",
+                        "afterParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0020')"
+                    },
+                    {
+                        "type": "uri",
+                        "name": "Resource identifier path",
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0020')",
+                        "afterParameterReplacement": "/n1dmob/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005249',Maintenanceorderoperation='0020')"
+                    },
+                    {
+                        "type": "set of image mappings",
+                        "name": "Resource identifier image mappings",
+                        "beforeParameterReplacement": "[]",
+                        "afterParameterReplacement": "[]"
+                    }
+                ],
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Adding card resource identifiers",
+                        "reference": null,
+                        "data": null
+                    }
+                ]
+            },
+            {
+                "name": "Card Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "8799b499-07ba-4282-bb8c-93d0bd8f1239",
+                "status": "success",
+                "description": "create the card instance manifest",
+                "values": [
+                    {
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0010')",
+                        "afterParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0010')"
+                    },
+                    {
+                        "type": "uri",
+                        "name": "Resource identifier path",
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0010')",
+                        "afterParameterReplacement": "/n1dmob/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0010')"
+                    },
+                    {
+                        "type": "set of image mappings",
+                        "name": "Resource identifier image mappings",
+                        "beforeParameterReplacement": "[]",
+                        "afterParameterReplacement": "[]"
+                    }
+                ],
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Adding card resource identifiers",
+                        "reference": null,
+                        "data": null
+                    }
+                ]
+            },
+            {
+                "name": "Card Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "de13f3c9-d770-4595-b6e3-5b5b1c074da6",
+                "status": "success",
+                "description": "create the card instance manifest",
+                "values": [
+                    {
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0020')",
+                        "afterParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0020')"
+                    },
+                    {
+                        "type": "uri",
+                        "name": "Resource identifier path",
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0020')",
+                        "afterParameterReplacement": "/n1dmob/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005343',Maintenanceorderoperation='0020')"
+                    },
+                    {
+                        "type": "set of image mappings",
+                        "name": "Resource identifier image mappings",
+                        "beforeParameterReplacement": "[]",
+                        "afterParameterReplacement": "[]"
+                    }
+                ],
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Adding card resource identifiers",
+                        "reference": null,
+                        "data": null
+                    }
+                ]
+            },
+            {
+                "name": "Card Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "d6dc0104-3f5c-4772-9fd2-8c6b45768340",
+                "status": "success",
+                "description": "create the card instance manifest",
+                "values": [
+                    {
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005453',Maintenanceorderoperation='0020')",
+                        "afterParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005453',Maintenanceorderoperation='0020')"
+                    },
+                    {
+                        "type": "uri",
+                        "name": "Resource identifier path",
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005453',Maintenanceorderoperation='0020')",
+                        "afterParameterReplacement": "/n1dmob/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005453',Maintenanceorderoperation='0020')"
+                    },
+                    {
+                        "type": "set of image mappings",
+                        "name": "Resource identifier image mappings",
+                        "beforeParameterReplacement": "[]",
+                        "afterParameterReplacement": "[]"
+                    }
+                ],
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Adding card resource identifiers",
+                        "reference": null,
+                        "data": null
+                    }
+                ]
+            },
+            {
+                "name": "Card Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "ff34651c-599b-4fbf-a6f4-e627ec90fc80",
+                "status": "success",
+                "description": "create the card instance manifest",
+                "values": [
+                    {
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4003625',Maintenanceorderoperation='0020')",
+                        "afterParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4003625',Maintenanceorderoperation='0020')"
+                    },
+                    {
+                        "type": "uri",
+                        "name": "Resource identifier path",
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4003625',Maintenanceorderoperation='0020')",
+                        "afterParameterReplacement": "/n1dmob/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4003625',Maintenanceorderoperation='0020')"
+                    },
+                    {
+                        "type": "set of image mappings",
+                        "name": "Resource identifier image mappings",
+                        "beforeParameterReplacement": "[]",
+                        "afterParameterReplacement": "[]"
+                    }
+                ],
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Adding card resource identifiers",
+                        "reference": null,
+                        "data": null
+                    }
+                ]
+            },
+            {
+                "name": "Card Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "8e3e4800-86ad-4a02-a6c3-f40a5643c23b",
+                "status": "success",
+                "description": "create the card instance manifest",
+                "values": [
+                    {
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4004495',Maintenanceorderoperation='0020')",
+                        "afterParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4004495',Maintenanceorderoperation='0020')"
+                    },
+                    {
+                        "type": "uri",
+                        "name": "Resource identifier path",
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4004495',Maintenanceorderoperation='0020')",
+                        "afterParameterReplacement": "/n1dmob/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4004495',Maintenanceorderoperation='0020')"
+                    },
+                    {
+                        "type": "set of image mappings",
+                        "name": "Resource identifier image mappings",
+                        "beforeParameterReplacement": "[]",
+                        "afterParameterReplacement": "[]"
+                    }
+                ],
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Adding card resource identifiers",
+                        "reference": null,
+                        "data": null
+                    }
+                ]
+            },
+            {
+                "name": "Card Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "91faea49-7a6f-4fab-9bed-c496d19f784e",
+                "status": "success",
+                "description": "create the card instance manifest",
+                "values": [
+                    {
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005203',Maintenanceorderoperation='0020')",
+                        "afterParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005203',Maintenanceorderoperation='0020')"
+                    },
+                    {
+                        "type": "uri",
+                        "name": "Resource identifier path",
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005203',Maintenanceorderoperation='0020')",
+                        "afterParameterReplacement": "/n1dmob/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4005203',Maintenanceorderoperation='0020')"
+                    },
+                    {
+                        "type": "set of image mappings",
+                        "name": "Resource identifier image mappings",
+                        "beforeParameterReplacement": "[]",
+                        "afterParameterReplacement": "[]"
+                    }
+                ],
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Adding card resource identifiers",
+                        "reference": null,
+                        "data": null
+                    }
+                ]
+            },
+            {
+                "name": "Card Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "faaae237-3c68-4a30-a25a-eaa4cada2e04",
+                "status": "success",
+                "description": "create the card instance manifest",
+                "values": [
+                    {
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4001011',Maintenanceorderoperation='0010')",
+                        "afterParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4001011',Maintenanceorderoperation='0010')"
+                    },
+                    {
+                        "type": "uri",
+                        "name": "Resource identifier path",
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4001011',Maintenanceorderoperation='0010')",
+                        "afterParameterReplacement": "/n1dmob/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4001011',Maintenanceorderoperation='0010')"
+                    },
+                    {
+                        "type": "set of image mappings",
+                        "name": "Resource identifier image mappings",
+                        "beforeParameterReplacement": "[]",
+                        "afterParameterReplacement": "[]"
+                    }
+                ],
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Adding card resource identifiers",
+                        "reference": null,
+                        "data": null
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "de13f3c9-d770-4595-b6e3-5b5b1c074da6",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0020"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4005343"
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "8799b499-07ba-4282-bb8c-93d0bd8f1239",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0010"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4005343"
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "8e3e4800-86ad-4a02-a6c3-f40a5643c23b",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0020"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4004495"
+                    }
+                ]
+            },
+            {
+                "name": "Card Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "bd82641e-35bc-42fb-b24b-853336948881",
+                "status": "success",
+                "description": "create the card instance manifest",
+                "values": [
+                    {
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4000890',Maintenanceorderoperation='0010')",
+                        "afterParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4000890',Maintenanceorderoperation='0010')"
+                    },
+                    {
+                        "type": "uri",
+                        "name": "Resource identifier path",
+                        "beforeParameterReplacement": "/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4000890',Maintenanceorderoperation='0010')",
+                        "afterParameterReplacement": "/n1dmob/sap/opu/odata/ISAMMCCO/MOPERASSIGN_SOL_SRV/MaintenanceOrdOperationSet(Maintenanceorder='4000890',Maintenanceorderoperation='0010')"
+                    },
+                    {
+                        "type": "set of image mappings",
+                        "name": "Resource identifier image mappings",
+                        "beforeParameterReplacement": "[]",
+                        "afterParameterReplacement": "[]"
+                    }
+                ],
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Adding card resource identifiers",
+                        "reference": null,
+                        "data": null
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "91faea49-7a6f-4fab-9bed-c496d19f784e",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0020"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4005203"
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "d6dc0104-3f5c-4772-9fd2-8c6b45768340",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0020"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4005453"
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "faaae237-3c68-4a30-a25a-eaa4cada2e04",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0010"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4001011"
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "d1fe1567-a43c-4074-9c67-99ce522ea0e0",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0020"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4005249"
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "bd82641e-35bc-42fb-b24b-853336948881",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0010"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4000890"
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "ff34651c-599b-4fbf-a6f4-e627ec90fc80",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0020"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4003625"
+                    }
+                ]
+            },
+            {
+                "name": "PARAMETERIZATION CONTEXT",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "93778489-fd77-4462-bbc2-75c134401a72",
+                "status": "success",
+                "description": "building parameterization context",
+                "values": [
+                    {
+                        "type": "parameter",
+                        "name": "UserId",
+                        "afterParameterReplacement": "ashutosh-sing@hcl.com"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "XSDDateTime",
+                        "afterParameterReplacement": "2022-03-04T08:02:57Z"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID2",
+                        "afterParameterReplacement": "0030"
+                    },
+                    {
+                        "type": "parameter",
+                        "name": "ID1",
+                        "afterParameterReplacement": "4005249"
+                    }
+                ]
+            },
+            {
+                "name": "Card Parameter Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "8799b499-07ba-4282-bb8c-93d0bd8f1239",
+                "status": "success",
+                "description": "create the card instance parameter manifest"
+            },
+            {
+                "name": "Card Parameter Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "93778489-fd77-4462-bbc2-75c134401a72",
+                "status": "success",
+                "description": "create the card instance parameter manifest"
+            },
+            {
+                "name": "Card Parameter Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "faaae237-3c68-4a30-a25a-eaa4cada2e04",
+                "status": "success",
+                "description": "create the card instance parameter manifest"
+            },
+            {
+                "name": "Card Parameter Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "91faea49-7a6f-4fab-9bed-c496d19f784e",
+                "status": "success",
+                "description": "create the card instance parameter manifest"
+            },
+            {
+                "name": "Card Parameter Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "bd82641e-35bc-42fb-b24b-853336948881",
+                "status": "success",
+                "description": "create the card instance parameter manifest"
+            },
+            {
+                "name": "Card Parameter Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "d1fe1567-a43c-4074-9c67-99ce522ea0e0",
+                "status": "success",
+                "description": "create the card instance parameter manifest"
+            },
+            {
+                "name": "Card Parameter Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "de13f3c9-d770-4595-b6e3-5b5b1c074da6",
+                "status": "success",
+                "description": "create the card instance parameter manifest"
+            },
+            {
+                "name": "Card Parameter Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "ff34651c-599b-4fbf-a6f4-e627ec90fc80",
+                "status": "success",
+                "description": "create the card instance parameter manifest"
+            },
+            {
+                "name": "Card Parameter Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "8e3e4800-86ad-4a02-a6c3-f40a5643c23b",
+                "status": "success",
+                "description": "create the card instance parameter manifest"
+            },
+            {
+                "name": "Card Parameter Manifest",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "d6dc0104-3f5c-4772-9fd2-8c6b45768340",
+                "status": "success",
+                "description": "create the card instance parameter manifest"
+            }
+        ],
+        "status": "success"
+    },
+    {
+        "name": "4000 - CardInstanceStatusAssemblyStep",
+        "duration": 0,
+        "operations": [
+            {
+                "name": "Card status calculation",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "8799b499-07ba-4282-bb8c-93d0bd8f1239",
+                "status": "success",
+                "description": "Calculate the card status for the zip manifest",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Card was added after last client refresh date",
+                        "reference": null,
+                        "data": "Created at=Fri Mar 04 08:02:57 UTC 2022"
+                    }
+                ]
+            },
+            {
+                "name": "Card status calculation",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "91faea49-7a6f-4fab-9bed-c496d19f784e",
+                "status": "success",
+                "description": "Calculate the card status for the zip manifest",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Card was added after last client refresh date",
+                        "reference": null,
+                        "data": "Created at=Fri Mar 04 08:02:57 UTC 2022"
+                    }
+                ]
+            },
+            {
+                "name": "Card status calculation",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "d1fe1567-a43c-4074-9c67-99ce522ea0e0",
+                "status": "success",
+                "description": "Calculate the card status for the zip manifest",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Card was added after last client refresh date",
+                        "reference": null,
+                        "data": "Created at=Fri Mar 04 08:02:57 UTC 2022"
+                    }
+                ]
+            },
+            {
+                "name": "Card status calculation",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "bd82641e-35bc-42fb-b24b-853336948881",
+                "status": "success",
+                "description": "Calculate the card status for the zip manifest",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Card was added after last client refresh date",
+                        "reference": null,
+                        "data": "Created at=Fri Mar 04 08:02:57 UTC 2022"
+                    }
+                ]
+            },
+            {
+                "name": "Card status calculation",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "ff34651c-599b-4fbf-a6f4-e627ec90fc80",
+                "status": "success",
+                "description": "Calculate the card status for the zip manifest",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Card was added after last client refresh date",
+                        "reference": null,
+                        "data": "Created at=Fri Mar 04 08:02:57 UTC 2022"
+                    }
+                ]
+            },
+            {
+                "name": "Card status calculation",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "8e3e4800-86ad-4a02-a6c3-f40a5643c23b",
+                "status": "success",
+                "description": "Calculate the card status for the zip manifest",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Card was added after last client refresh date",
+                        "reference": null,
+                        "data": "Created at=Fri Mar 04 08:02:57 UTC 2022"
+                    }
+                ]
+            },
+            {
+                "name": "Card status calculation",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "de13f3c9-d770-4595-b6e3-5b5b1c074da6",
+                "status": "success",
+                "description": "Calculate the card status for the zip manifest",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Card was added after last client refresh date",
+                        "reference": null,
+                        "data": "Created at=Fri Mar 04 08:02:57 UTC 2022"
+                    }
+                ]
+            },
+            {
+                "name": "Card status calculation",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "d6dc0104-3f5c-4772-9fd2-8c6b45768340",
+                "status": "success",
+                "description": "Calculate the card status for the zip manifest",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Card was added after last client refresh date",
+                        "reference": null,
+                        "data": "Created at=Fri Mar 04 08:02:57 UTC 2022"
+                    }
+                ]
+            },
+            {
+                "name": "Card status calculation",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "faaae237-3c68-4a30-a25a-eaa4cada2e04",
+                "status": "success",
+                "description": "Calculate the card status for the zip manifest",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Card was added after last client refresh date",
+                        "reference": null,
+                        "data": "Created at=Fri Mar 04 08:02:57 UTC 2022"
+                    }
+                ]
+            },
+            {
+                "name": "Card status calculation",
+                "cardTypeId": "FEF51F95-678F-44F0-8026-48D7BF461B37",
+                "cardInstanceId": "93778489-fd77-4462-bbc2-75c134401a72",
+                "status": "success",
+                "description": "Calculate the card status for the zip manifest",
+                "notes": [
+                    {
+                        "type": "info",
+                        "note": "Card was added after last client refresh date",
+                        "reference": null,
+                        "data": "Created at=Fri Mar 04 08:02:57 UTC 2022"
+                    }
+                ]
+            }
+        ],
+        "status": "success"
+    },
+    {
+        "name": "5000 - CardTypeSelectorAssemblyStep",
+        "duration": 0,
+        "status": "success"
+    },
+    {
+        "name": "6000 - CardTypeHandlingAssemblyStep",
+        "duration": 0,
+        "status": "success"
+    },
+    {
+        "name": "7000 - CardTypeStatusAssemblyStep",
+        "duration": 0,
+        "status": "success"
+    },
+    {
+        "name": "8000 - CardClassSelectorAssemblyStep",
+        "duration": 0,
+        "status": "success"
+    },
+    {
+        "name": "9000 - CardClassHandlerAssemblyStep",
+        "duration": 2,
+        "status": "success"
+    },
+    {
+        "name": "10000 - CardClassStatusAssemblyStep",
+        "duration": 0,
+        "status": "success"
+    }
+]
